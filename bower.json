@@ -1,0 +1,28 @@
+{
+  "name": "polieditor",
+  "homepage": "https://github.com/aisy/polieditor",
+  "authors": [
+    "ffadilaputra <sfkikuk@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "keywords": [
+    "html",
+    "css",
+    "js",
+    "mdb"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "asset",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "datatables": "^1.10.13",
+    "font-awesome": "^4.7.0"
+  }
+}
