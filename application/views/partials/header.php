@@ -39,4 +39,4 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body class="fixed-sn mdb-skin">

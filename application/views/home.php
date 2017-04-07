@@ -1,5 +1,12 @@
+<!-- Primary Style Header -->
 <?php $this->load->view('partials/mdb-header') ?>
- <!--Navigation & Intro-->
+<!-- /.Primary Style Header -->
+
+<!-- Custom Home Style -->
+<?php $this->load->view('partials/utils/home-style') ?>
+<!-- /.Custom Home Style -->
+
+<!--Navigation & Intro-->
     <header>
         <!--Navbar-->
         <nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
@@ -63,11 +70,11 @@
                                     </div>
                                     <!--Body-->
                                     <div class="md-form">
-                                        <input type="text" id="form3" class="form-control">
+                                        <input type="text" class="form-control">
                                         <label for="form3">Your name</label>
                                     </div>
                                     <div class="md-form">
-                                        <input type="text" id="form2" class="form-control">
+                                        <input type="text" class="form-control">
                                         <label for="form2">Your email</label>
                                     </div>
                                     <!--Textarea with icon prefix-->
@@ -85,4 +92,5 @@
         <!--/.Mask-->
     </header>
     <!--/Navigation & Intro-->
+    
 <?php $this->load->view('partials/mdb-footer') ?>

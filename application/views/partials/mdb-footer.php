@@ -1,5 +1,4 @@
-<!-- SCRIPTS -->
-
+    <!-- SCRIPTS -->
     <!-- JQuery -->
     <script type="text/javascript" src="<?php echo base_url('asset/jquery/dist/jquery.min.js') ?>"></script>
     <!-- Tooltips -->
