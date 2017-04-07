@@ -14,5 +14,3 @@
     <link href="<?php echo base_url('asset/mdb/css/mdb.min.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('asset/css/custom.css') ?>" rel="stylesheet">
 </head>
-
-<body class="fixed-sn mdb-skin">

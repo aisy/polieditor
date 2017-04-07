@@ -1,8 +1,8 @@
+ <body class="fixed-sn mdb-skin">
  <!--Double navigation-->
     <header>
         <!--Navbar-->
         <nav class="navbar navbar-fixed-top scrolling-navbar double-nav">
-
             <!-- SideNav slide-out button -->
             <div class="float-xs-left">
                 <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>

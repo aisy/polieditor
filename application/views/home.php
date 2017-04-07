@@ -5,7 +5,7 @@
 <!-- Custom Home Style -->
 <?php $this->load->view('partials/utils/home-style') ?>
 <!-- /.Custom Home Style -->
-
+<body>
 <!--Navigation & Intro-->
     <header>
         <!--Navbar-->
@@ -79,7 +79,7 @@
                                     </div>
                                     <!--Textarea with icon prefix-->
                                     <div class="md-form">
-                                      <button class="btn btn-danger btn-block btn-rounded">Login</button>
+                                      <button class="btn btn-primary btn-block btn-rounded">Login</button>
                                     </div>
                                 </div>
                             </div>
