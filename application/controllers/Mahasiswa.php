@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin extends CI_Controller {
+class Mahasiswa extends CI_Controller {
 
     public function index(){
-        $this->load->view('adm_dashboard');
+        $this->load->view('mhs_dashboard');
     }
 }

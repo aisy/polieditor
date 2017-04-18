@@ -11,6 +11,6 @@
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url('asset/mdb/css/bootstrap.min.css') ?>" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="<?php echo base_url('asset/mdb/css/mdb.min.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('asset/mdb/css/mdb.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('asset/css/custom.css') ?>" rel="stylesheet">
 </head>

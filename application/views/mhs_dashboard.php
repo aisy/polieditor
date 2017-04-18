@@ -3,12 +3,8 @@
 <!-- /.Primary Style Header -->
 
 <!-- Admin Navbar Open -->
-<?php $this->load->view('partials/adm_navbar') ?>
+<?php $this->load->view('partials/mhs_navbar') ?>
 <!-- Admin Navbar Close -->
-
-<!-- Sidebar Admin -->
-<?php $this->load->view('partials/sidebar_adm') ?>
-<!-- Sidebar Admin Close -->
 
 <!--Main layout-->
 <main id="content">
