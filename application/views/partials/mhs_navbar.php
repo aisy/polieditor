@@ -1,6 +1,5 @@
 <body class="fixed-sn mdb-skin">
   <!--Double navigation-->
-  <header>
     <!-- Sidebar navigation -->
     <ul class="side-nav fixed custom-scrollbar">
       <!-- Logo -->
@@ -67,5 +66,4 @@
 
       </nav>
       <!--/.Navbar-->
-    </header>
     <!--/Double navigation-->

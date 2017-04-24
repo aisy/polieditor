@@ -1,10 +1,8 @@
-/*#content{
-    margin-left: 250px;
-}*/
-
 html,
 body,
-header,
+header{
+    height: 100%;
+}
 .view {
     height: 100%;
 }
@@ -55,9 +53,4 @@ header,
     #app-mockup {
         max-height: 400px;
     }
-}
-/*Footer*/
-
-.page-footer {
-    background-color:
 }
