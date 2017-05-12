@@ -8,154 +8,46 @@
 
 <!--Main layout-->
 <main id="content">
-    <div class="container-fluid">
-        <div class="row">
-            <!--First column-->
-            <div class="col-lg-4 col-md-6">
-                <!--Card-->
-                <div class="card">
-                    <!--Header-->
-                    <div class="card-header danger-color-dark white-text text-xs-center">
-                        Featured
-                    </div>
-                    <!--/Header-->
+  <div class="container-fluid">
+    <div class="row">
+      <!--First column-->
+      <div class="col-lg-4 col-md-6">
 
-                    <!--Content-->
-                    <div class="card-block">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Username</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!--/Content-->
-                </div>
-                <!--/Card-->
-            </div>
-            <!--/First column-->
-            <!--Second column-->
-            <div class="col-lg-4 col-md-6">
-                <!--Card-->
-                <div class="card">
-                    <!--Header-->
-                    <div class="card-header danger-color-dark white-text text-xs-center">
-                        Featured
-                    </div>
-                    <!--/Header-->
 
-                    <!--Content-->
-                    <div class="card-block">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Username</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!--/Content-->
-                </div>
-                <!--/Card-->
-            </div>
-            <!--/Second column-->
-            <!--Third column-->
-            <div class="col-lg-4 col-md-6">
-                <!--Card-->
-                <div class="card">
-                    <!--Header-->
-                    <div class="card-header danger-color-dark white-text text-xs-center">
-                        Featured
-                    </div>
-                    <!--/Header-->
+        <!--Card-->
+        <div class="card testimonial-card">
 
-                    <!--Content-->
-                    <div class="card-block">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Username</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!--/Content-->
-                </div>
-                <!--/Card-->
-            </div>
-            <!--/Third column-->
+          <!--Bacground color-->
+          <div class="card-up default-color-dark">
+          </div>
+
+          <!--Avatar-->
+          <div class="avatar"><img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%288%29.jpg" class="rounded-circle img-responsive">
+          </div>
+
+          <div class="card-block">
+            <!--Name-->
+            <h4 class="card-title">
+              <strong>
+                Nama Materi
+              </strong>
+            </h4>
+            <hr>
+            <!--Quotation-->
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci
+            </p>
+          </div>
+
         </div>
+        <!--/.Card-->
+
+
+
+      </div>
+      <!--/First column-->
     </div>
+  </div>
 </main>
 <!--/Main layout-->
 <?php $this->load->view('partials/mdb-footer') ?>
