@@ -10,10 +10,9 @@
 <main id="content">
   <div class="container-fluid">
     <div class="row">
+
       <!--First column-->
       <div class="col-lg-4 col-md-6">
-
-
         <!--Card-->
         <div class="card testimonial-card">
 
@@ -29,7 +28,7 @@
             <!--Name-->
             <h4 class="card-title">
               <strong>
-                Nama Materi
+                Materi
               </strong>
             </h4>
             <hr>
@@ -37,15 +36,89 @@
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci
             </p>
+
+            <button type="button" class="btn btn-default">
+                Lihat semua
+            </button>
           </div>
 
         </div>
         <!--/.Card-->
-
-
-
       </div>
       <!--/First column-->
+
+      <!--First column-->
+      <div class="col-lg-4 col-md-6">
+        <!--Card-->
+        <div class="card testimonial-card">
+
+          <!--Bacground color-->
+          <div class="card-up primary-color-dark">
+          </div>
+
+          <!--Avatar-->
+          <div class="avatar"><img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%288%29.jpg" class="rounded-circle img-responsive">
+          </div>
+
+          <div class="card-block">
+            <!--Name-->
+            <h4 class="card-title">
+              <strong>
+                Latihan
+              </strong>
+            </h4>
+            <hr>
+            <!--Quotation-->
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci
+            </p>
+
+            <button type="button" class="btn btn-default">
+                Lihat semua
+            </button>
+          </div>
+
+        </div>
+        <!--/.Card-->
+      </div>
+      <!--/First column-->
+
+      <!--First column-->
+      <div class="col-lg-4 col-md-6">
+        <!--Card-->
+        <div class="card testimonial-card">
+
+          <!--Bacground color-->
+          <div class="card-up secondary-color-dark">
+          </div>
+
+          <!--Avatar-->
+          <div class="avatar"><img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%288%29.jpg" class="rounded-circle img-responsive">
+          </div>
+
+          <div class="card-block">
+            <!--Name-->
+            <h4 class="card-title">
+              <strong>
+                Ujian
+              </strong>
+            </h4>
+            <hr>
+            <!--Quotation-->
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci
+            </p>
+
+            <button type="button" class="btn btn-default">
+                Lihat semua
+            </button>
+          </div>
+
+        </div>
+        <!--/.Card-->
+      </div>
+      <!--/First column-->
+
     </div>
   </div>
 </main>
