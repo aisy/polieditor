@@ -12,9 +12,7 @@ function showHTML() {
 }
 // or use data: url to handle things like doctype
 function showHTMLInIFrame() {
-    $('#return').html("
-    <iframe src=" +
-         "data:text/html," + encodeURIComponent(editor.getValue()) +
-    "></iframe>");
+    $('#return').html("<iframe src='" + "data:text/html," + encodeURIComponent(editor.getValue()) + "'></iframe>");
 }
+
 editor.on("input", showHTMLInIFrame)
