@@ -12,8 +12,15 @@
     <script src="<?= base_url('asset/js') ?>/ext-language_tools.js"></script>
     <script src="<?= base_url('asset/js') ?>/mode-html.js"></script>
     <script src="<?= base_url('asset/js') ?>/editor.js"></script>
-
-
     <script>
         new WOW().init();
+    </script>
+
+    <script type="text/javascript">
+        $(function() {
+            $("#lul").hide();
+            $("#show").click(function(){
+                $("#lul").show();
+            });
+        });
     </script>

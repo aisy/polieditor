@@ -4,7 +4,8 @@ editor.session.setMode("ace/mode/html");
 editor.setOptions({
     enableBasicAutocompletion: true,
     enableSnippets: true,
-    enableLiveAutocompletion: false
+    enableLiveAutocompletion: false,
+    autoScrollEditorIntoView: true,
 });
 
 function showHTML() {
