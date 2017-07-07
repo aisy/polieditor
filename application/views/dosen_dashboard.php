@@ -3,7 +3,7 @@
 <!-- /.Primary Style Header -->
 
 <!-- Admin Navbar Open -->
-<?php $this->load->view('partials/mhs_navbar') ?>
+<?php $this->load->view('partials/dsn_navbar') ?>
 <!-- Admin Navbar Close -->
 
 <!--Main layout-->
@@ -11,51 +11,113 @@
   <div class="container-fluid">
     <div class="row">
 
+      <!--Panel 1-->
+      <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
+        <div class="center text-xs-center">
+          <button class="btn btn-primary" data-toggle="modal" data-target="#tambah_kelas">
+            <i class="fa fa-plus-square left"></i> Tambah kelas
+          </button>
+            <hr>
 
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs tabs-4 red" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#panel1" role="tab">Kelas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#panel2" role="tab">Materi</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#panel3" role="tab">Latihan</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#panel4" role="tab">Ujian</a>
-        </li>
-      </ul>
-      <!-- Tab panels -->
-      <div class="tab-content card">
-        <!--Panel 1-->
-        <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
-          <br>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
         </div>
-        <!--/.Panel 1-->
-        <!--Panel 2-->
-        <div class="tab-pane fade" id="panel2" role="tabpanel">
-          <br>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+
+        <div class="container">
+          <div class="row">
+            <!-- Card -->
+            <div class="col-lg-4 col-md-6">
+              <!--Card-->
+              <div class="card testimonial-card">
+                <div class="card-up primary-color-dark">
+                </div>
+
+                <div class="avatar"><img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%288%29.jpg" class="rounded-circle img-responsive">
+                </div>
+
+                <div class="card-block">
+                  <h4 class="card-title">
+                    <strong>
+                      Kelas TI-1E
+                    </strong>
+                  </h4>
+                  <hr>
+                <a href="" type="button" class="btn btn-default">
+                  Lihat Kelas
+                </a>
+              </div>
+
+            </div>
+            </div>
+            <!--/Card-->
+          </div>
         </div>
-        <!--/.Panel 2-->
-        <!--Panel 3-->
-        <div class="tab-pane fade" id="panel3" role="tabpanel">
-          <br>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
-        </div>
-        <!--/.Panel 3-->
-        <!--Panel 4-->
-        <div class="tab-pane fade" id="panel4" role="tabpanel">
-          <br>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
-        </div>
-        <!--/.Panel 3-->
       </div>
+      <!--/.Panel 1-->
 
+      <!-- MODAL  -->
+      <form class="" action="index.html" method="post">
+      <div class="modal fade" id="tambah_kelas" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id=""><i class="fa fa-plus-square" class="left"></i> Tambah Kelas</h4>
+            </div>
+            <div class="modal-body">
+
+              <div class="md-form">
+                <input type="text" name="nama_kelas" class="form-control" id="kelas" placeholder="">
+                <label for="kelas">Nama Kelas</label>
+              </div>
+
+              <div class="md-form">
+                <input type="text" name="prodi" class="form-control" id="Program Study" placeholder="">
+                <label for="kelas">Prodi</label>
+              </div>
+
+              <div class="md-form">
+                <input type="number" name="kuota" class="form-control" id="kuota" placeholder="">
+                <label for="kuota">Kuota kelas</label>
+              </div>
+
+              <div class="md-form">
+                <input type="text" class="form-control" id="" placeholder="">
+                <p class="help-block">Help text here.</p>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+              <button type="sumbit" class="btn btn-block btn-success">Tambah Kelas</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </form>
+
+      <form class="" action="index.html" method="post">
+      <div class="modal fade" id="tambah_kelas" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id=""><i class="fa fa-plus-square" class="left"></i> Tambah Materi</h4>
+            </div>
+            <div class="modal-body">
+
+              <div class="md-form">
+                <input type="text" name="nama_kelas" class="form-control" id="kelas" placeholder="">
+                <label for="kelas">Nama Kelas</label>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+              <button type="sumbit" class="btn btn-block btn-success">Upload Materi</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </form>
 
     </div>
   </div>
