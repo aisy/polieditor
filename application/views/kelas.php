@@ -84,32 +84,37 @@
           </div>
 
           <div class="container">
-            <div class="row">
-              <!-- Card -->
-              <div class="col-lg-4 col-md-6">
-                <!--Card-->
-                <div class="card testimonial-card">
-                  <div class="card-up primary-color-dark">
-                  </div>
+            <div class="container">
+              <div class="row">
+                <table class="table table-bordered table-striped">
+                  <tr>
+                    <thead>
+                      <th>#</th>
+                      <th>Nama Materi</th>
+                      <th>Keterangan</th>
+                      <th>Pilihan</th>
+                    </thead>
+                  </tr>
 
-                  <div class="avatar"><img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%288%29.jpg" class="rounded-circle img-responsive">
-                  </div>
-
-                  <div class="card-block">
-                    <h4 class="card-title">
-                      <strong>
-                        Materi
-                      </strong>
-                    </h4>
-                    <hr>
-                    <a href="" type="button" class="btn btn-default">
-                      Preview Materi
-                    </a>
-                  </div>
-
-                </div>
+                  <tr>
+                    <tbody>
+                      <td>1</td>
+                      <td>HTML dasar</td>
+                      <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                      <td>
+                        <div class="btn-group btn-group-sm">
+                          <button type="button" class="btn btn-warning">
+                            <i class="fa fa-edit"></i>
+                          </button>
+                          <button type="button" class="btn btn-danger">
+                            <i class="fa fa-trash"></i>
+                          </button>
+                        </div>
+                      </td>
+                    </tbody>
+                  </tr>
+                </table>
               </div>
-              <!--/Card-->
             </div>
           </div>
         </div>
