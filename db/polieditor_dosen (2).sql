@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 08 Jul 2017 pada 04.03
+-- Generation Time: 08 Jul 2017 pada 06.45
 -- Versi Server: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -34,6 +34,13 @@ CREATE TABLE IF NOT EXISTS `dosen` (
   PRIMARY KEY (`nip`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `dosen`
+--
+
+INSERT INTO `dosen` (`nip`, `nama_dosen`, `password`, `jkel`) VALUES
+('1241180090', 'ira', 'ira123', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -43,9 +50,17 @@ CREATE TABLE IF NOT EXISTS `dosen` (
 CREATE TABLE IF NOT EXISTS `kelas` (
   `id_kelas` int(15) NOT NULL AUTO_INCREMENT,
   `nama_kelas` varchar(30) NOT NULL,
+  `prodi` varchar(40) NOT NULL,
   `kuota_kelas` int(2) NOT NULL,
   PRIMARY KEY (`id_kelas`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data untuk tabel `kelas`
+--
+
+INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `prodi`, `kuota_kelas`) VALUES
+(1, 'WRI', 'Teknik Informatika', 30);
 
 -- --------------------------------------------------------
 
