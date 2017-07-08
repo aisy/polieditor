@@ -251,7 +251,7 @@
 
           <div class="md-form">
             <input type="text" name="judul" id="judul" class="form-control">
-            <label for="judul" class="">Judul Tugas</label>
+            <label for="judul" class="">Judul Materi</label>
           </div>
 
           <div class="md-form">
@@ -274,7 +274,7 @@
         </div>
         <div class="modal-footer">
           <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-          <button type="sumbit" class="btn btn-block btn-success">Buat Tugas</button>
+          <button type="sumbit" class="btn btn-block btn-success">Upload Materi</button>
         </div>
       </div>
     </div>

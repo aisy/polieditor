@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 08 Jul 2017 pada 01.59
+-- Generation Time: 08 Jul 2017 pada 04.03
 -- Versi Server: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -55,10 +55,27 @@ CREATE TABLE IF NOT EXISTS `kelas` (
 
 CREATE TABLE IF NOT EXISTS `materi` (
   `id_materi` int(15) NOT NULL AUTO_INCREMENT,
+  `id_dosen` int(15) NOT NULL,
   `judul` varchar(40) NOT NULL,
+  `nama_file` varchar(100) NOT NULL,
   `keterangan` text NOT NULL,
   `tanggal_upload` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_materi`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `nilai`
+--
+
+CREATE TABLE IF NOT EXISTS `nilai` (
+  `id_nilai` int(15) NOT NULL AUTO_INCREMENT,
+  `id_tugas` int(15) NOT NULL,
+  `nim` int(15) NOT NULL,
+  `nip` int(15) NOT NULL,
+  `nilai` int(2) NOT NULL,
+  PRIMARY KEY (`id_nilai`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
