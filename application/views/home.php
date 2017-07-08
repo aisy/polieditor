@@ -33,7 +33,7 @@
                                     <!--Body-->
                                     <div class="md-form">
                                         <input id="nim" type="text" class="form-control">
-                                        <label for="nim">NIM</label>
+                                        <label for="nim">NIP</label>
                                     </div>
                                     <div class="md-form">
                                         <input id="password" type="text" class="form-control">

@@ -7,7 +7,7 @@
         <div class="logo-wrapper sn-ad-avatar-wrapper">
           <img src="<?php echo base_url('asset/img/images.png') ?>" class="rounded-circle">
           <div class="rgba-stylish-strong">
-            <p class="user white-text">Mahasiswa<br>Aisy Muhammad R</p>
+            <p class="user white-text">Dosen<br>Aisy Muhammad R</p>
           </div>
         </div>
       </li>
