@@ -18,7 +18,7 @@ class Classname extends CI_Model{
 
   public function find($id) {
       $this->db->where($this->primaryKey, $id);
-      return $this->db->get($this->table)->result();
+      return $this->db->get($this->table)->row();
   }
 
   public function where($field, $value) {
