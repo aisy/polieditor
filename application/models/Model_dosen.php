@@ -8,6 +8,8 @@ class Model_dosen extends CI_Model {
     public function __construct() {
         parent::__construct();
     }
+
+    
     public function all() {
         return $this->db->get($this->table)->result();
     }
