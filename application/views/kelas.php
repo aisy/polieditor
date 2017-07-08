@@ -195,28 +195,36 @@
             <label for="isi">Isi Tugas</label>
           </div>
 
-          <div class="form-inline">
-            <div class="md-form form-group">
-              <input placeholder="Pilih Tanggal" name="tgl_mulai" type="text" id="date-picker-example" class="form-control datepicker">
-              <label for="date-picker-example">Tanggal Mulai</label>
+          <div class="md-form">
+
+            <div class="form-inline">
+              <div class="md-form form-group">
+                <input placeholder="Pilih Tanggal" name="tgl_mulai" type="text" id="date-picker-example" class="form-control datepicker">
+                <label for="date-picker-example">Tanggal Mulai</label>
+              </div>
+
+              <div class="md-form form-group">
+                <input placeholder="Pilih Waktu" name="wkt_mulai" type="text" id="input_starttime" class="form-control timepicker">
+                <label for="input_starttime">Waktu Mulai</label>
+              </div>
             </div>
 
-            <div class="md-form form-group">
-              <input placeholder="Pilih Waktu" name="wkt_mulai" type="text" id="input_starttime" class="form-control timepicker">
-              <label for="input_starttime">Waktu Mulai</label>
-            </div>
           </div>
 
-          <div class="form-inline">
-            <div class="md-form form-group">
-              <input placeholder="Pilih Tanggal" name="tgl_selesai" type="text" id="date-picker-example" class="form-control datepicker">
-              <label for="date-picker-example">Tanggal Selesai</label>
+          <div class="md-form">
+
+            <div class="form-inline">
+              <div class="md-form form-group">
+                <input placeholder="Pilih Tanggal" name="tgl_selesai" type="text" id="date-picker-example" class="form-control datepicker">
+                <label for="date-picker-example">Tanggal Selesai</label>
+              </div>
+
+              <div class="md-form form-group">
+                <input placeholder="Pilih Waktu" name="wkt_selesai" type="text" id="input_endtime" class="form-control timepicker">
+                <label for="input_starttime">Waktu Selesai</label>
+              </div>
             </div>
 
-            <div class="md-form form-group">
-              <input placeholder="Pilih Waktu" name="wkt_selesai" type="text" id="input_starttime" class="form-control timepicker">
-              <label for="input_starttime">Waktu Selesai</label>
-            </div>
           </div>
 
           <div class="md-form">
@@ -340,6 +348,10 @@ $('.datepicker').pickadate({
 });
 
 $('#input_starttime').pickatime({
-  twelvehour: true
+  twelvehour: false
+});
+
+$('#input_endtime').pickatime({
+  twelvehour: false
 });
 </script>
