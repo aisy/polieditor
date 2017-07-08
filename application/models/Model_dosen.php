@@ -9,7 +9,7 @@ class Model_dosen extends CI_Model {
         parent::__construct();
     }
 
-    
+
     public function all() {
         return $this->db->get($this->table)->result();
     }
@@ -36,5 +36,12 @@ class Model_dosen extends CI_Model {
     public function delete($id) {
         $this->db->where($this->primaryKey, $id);
         $this->db->delete($this->table);
+    }
+
+    public function login($username, $password){
+      # code...
+      $data = $this->db->get_where($this->table, array('nip'=>$username, 'password'=>$password));
+
+      return $data->first_row();
     }
 }

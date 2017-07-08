@@ -7,7 +7,7 @@
         <div class="logo-wrapper sn-ad-avatar-wrapper">
           <img src="<?php echo base_url('asset/img/images.png') ?>" class="rounded-circle">
           <div class="rgba-stylish-strong">
-            <p class="user white-text">Dosen<br>Aisy Muhammad R</p>
+            <p class="user white-text">Dosen<br><?= $this->session->userdata('username'); ?></p>
           </div>
         </div>
       </li>
@@ -58,8 +58,8 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <span class="hidden-sm-down">Profile</span></a>
             <div class="dropdown-menu dropdown-primary dd-right" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-              <a class="dropdown-item" href="#">My account</a>
-              <a class="dropdown-item" href="#">Logout</a>
+              <a class="dropdown-item" href="#">Akun Saya</a>
+              <a class="dropdown-item" href="<?= base_url('Dosen/logout') ?>">Logout</a>
             </div>
           </li>
         </ul>

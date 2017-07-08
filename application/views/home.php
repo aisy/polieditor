@@ -22,6 +22,7 @@
                         </div>
                         <!--/.First column-->
                         <!--Second column-->
+                        <form class="" action="<?= base_url('Dosen/login') ?>" method="post">
                         <div class="col-md-5">
                             <div class="card wow fadeInRight">
                                 <div class="card-block">
@@ -32,20 +33,21 @@
                                     </div>
                                     <!--Body-->
                                     <div class="md-form">
-                                        <input id="nim" type="text" class="form-control">
+                                        <input name="username" id="nim" type="text" class="form-control">
                                         <label for="nim">NIP</label>
                                     </div>
                                     <div class="md-form">
-                                        <input id="password" type="text" class="form-control">
+                                        <input name="password" id="password" type="text" class="form-control">
                                         <label for="password">Password</label>
                                     </div>
                                     <!--Textarea with icon prefix-->
                                     <div class="md-form">
-                                      <button class="btn btn-primary btn-block btn-rounded">Login</button>
+                                      <button type="submit" class="btn btn-primary btn-block btn-rounded">Login</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                      </form>
                         <!--/Second column-->
                     </div>
                 </div>

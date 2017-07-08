@@ -24,6 +24,7 @@
         <div class="container">
           <div class="row">
             <!-- Card -->
+            <?php foreach ($kelas as $key) { ?>
             <div class="col-lg-4 col-md-6">
               <!--Card-->
               <div class="card testimonial-card">
@@ -36,17 +37,18 @@
                 <div class="card-block">
                   <h4 class="card-title">
                     <strong>
-                      Kelas TI-1E
+                      <?= $key->nama_kelas ?>
                     </strong>
                   </h4>
                   <hr>
-                <a href="" type="button" class="btn btn-default">
+                <a href="<?= base_url('kelas/index/'.$key->id_kelas) ?>" type="button" class="btn btn-default">
                   Lihat Kelas
                 </a>
               </div>
 
             </div>
             </div>
+            <?php } ?>
             <!--/Card-->
           </div>
         </div>
@@ -54,7 +56,7 @@
       <!--/.Panel 1-->
 
       <!-- MODAL  -->
-      <form class="" action="index.html" method="post">
+      <form class="" action="<?= base_url('kelas/insert') ?>" method="post">
       <div class="modal fade" id="tambah_kelas" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -79,10 +81,10 @@
                 <label for="kuota">Kuota kelas</label>
               </div>
 
-              <div class="md-form">
+              <!-- <div class="md-form">
                 <input type="text" class="form-control" id="" placeholder="">
                 <p class="help-block">Help text here.</p>
-              </div>
+              </div> -->
 
             </div>
             <div class="modal-footer">
@@ -94,7 +96,7 @@
       </div>
       </form>
 
-      <form class="" action="index.html" method="post">
+      <form class="" action="" method="post">
       <div class="modal fade" id="tambah_kelas" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
