@@ -17,8 +17,8 @@ class Tugas extends CI_Controller {
 
     public function insert() {
 
-        $tgl_mulai = $this->input->post('tgl_mulai') . " " . $this->input->post('waktu_mulai');
-        $tgl_akhir = $this->input->post('tgl_akhir') . " " . $this->input->post('waktu_akhir');
+        $tgl_mulai = $this->input->post('tgl_mulai') . " " . $this->input->post('wkt_mulai');
+        $tgl_akhir = $this->input->post('tgl_selesai') . " " . $this->input->post('wkt_selesai');
         $id_kelas = $this->input->post('id_kelas');
 
         $data = array(
