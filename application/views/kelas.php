@@ -63,7 +63,7 @@
                         <button type="button" class="btn btn-warning">
                           <i class="fa fa-edit"></i>
                         </button>
-                        <button type="button" class="btn btn-danger">
+                        <button type="button" class="btn btn-danger" onclick="window.location='<?= base_url('tugas/delete/' . $row->id_tugas . '/' . $kelas->id_kelas) ?>'">
                           <i class="fa fa-trash"></i>
                         </button>
                         <button type="button" class="btn btn-info">
