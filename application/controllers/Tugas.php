@@ -47,7 +47,7 @@ class Tugas extends CI_Controller {
         );
 
         $this->Model_tugas->update($data, $id);
-        redirect('kelas/index/' . $id);
+        redirect('kelas/index/' . $this->input->post('id_kelas'));
     }
 
     public function delete($id, $id_kelas) {
