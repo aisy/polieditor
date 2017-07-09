@@ -11,7 +11,7 @@ class Kelas extends CI_Controller{
   }
 
   function index($id){
-
+    // $data['kelas'] = $this->Model_kelas->
     $this->load->view('kelas');
   }
 
