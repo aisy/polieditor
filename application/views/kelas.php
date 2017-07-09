@@ -10,6 +10,11 @@
   <div class="container-fluid">
     <div class="row">
 
+        <center>
+            <h1><?= $kelas->nama_kelas ?></h1>
+        </center>
+        <br>
+
       <!-- Nav tabs -->
       <ul class="nav nav-tabs tabs-3 red" role="tablist">
         <li class="nav-item">
@@ -22,6 +27,7 @@
           <a class="nav-link" data-toggle="tab" href="#panel3" role="tab"><i class="fa fa-group"></i> Mahasiswa</a>
         </li>
       </ul>
+
       <!-- Tab panels -->
       <div class="tab-content card">
 
@@ -46,12 +52,12 @@
                     <th>Pilihan</th>
                   </thead>
                 </tr>
-
+                <?php $no = 1; foreach ($tugas as $row) { ?>
                 <tr>
                   <tbody>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
+                    <td><?= $no++ ?></td>
+                    <td><?= $row->judul ?></td>
+                    <td><?= $row->jenis_tugas ?></td>
                     <td>
                       <div class="btn-group btn-group-sm">
                         <button type="button" class="btn btn-warning">
@@ -67,6 +73,7 @@
                     </td>
                   </tbody>
                 </tr>
+                <?php } ?>
               </table>
             </div>
           </div>
