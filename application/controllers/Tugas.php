@@ -22,11 +22,11 @@ class Tugas extends CI_Controller {
     $id_kelas   = $this->input->post('id_kelas');
 
     $data = array(
-      "jenis_tugas"   => $this->input->post('jenis_tugas');
-      "isi tugas"     => $this->input->post('isi_tugas');
-      "waktu_mulai"   => $tgl_mulai;
-      "waktu_selesai" => $tgl_akhir;
-      "id_kelas"      => $id_kelas;
+      "jenis_tugas"   => $this->input->post('jenis_tugas'),
+      "isi tugas"     => $this->input->post('isi_tugas'),
+      "waktu_mulai"   => $tgl_mulai,
+      "waktu_selesai" => $tgl_akhir,
+      "id_kelas"      => $id_kelas
     );
 
     $this->Model_tugas->insert($data);
@@ -38,17 +38,17 @@ class Tugas extends CI_Controller {
     $tgl_akhir = $this->input->post('tgl_akhir')." ".$this->input->post('waktu_akhir');
 
     $data = array(
-      "jenis_tugas"   => $this->input->post('jenis_tugas');
-      "isi tugas"     => $this->input->post('isi_tugas');
-      "waktu_mulai"   => $tgl_mulai;
-      "waktu_selesai" => $tgl_akhir;
+      "jenis_tugas"   => $this->input->post('jenis_tugas'),
+      "isi tugas"     => $this->input->post('isi_tugas'),
+      "waktu_mulai"   => $tgl_mulai,
+      "waktu_selesai" => $tgl_akhir
     );
 
     $this->Model_tugas->update($data, $id);
   }
 
-  public function delete($id){
-    $this->Model_tugas->update($data, $id);
+  public function delete($id) {
+    $this->Model_tugas->delete($id);
   }
 
 }
