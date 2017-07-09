@@ -177,7 +177,7 @@
 </main>
 
 <!-- MODAL  -->
-<form class="" action="index.html" method="post">
+<form class="" action="<?= base_url('tugas/insert') ?>" method="post">
   <div class="modal fade" id="tambah_tugas" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -186,6 +186,8 @@
           <h4 class="modal-title" id=""><i class="fa fa-plus-square" class="left"></i> Tambah Tugas</h4>
         </div>
         <div class="modal-body">
+
+            <input type="hidden" name="id_kelas" value="<?= $kelas->id_kelas ?>">
 
           <div class="md-form">
             <input type="text" name="judul" id="judul" class="form-control">
@@ -203,7 +205,7 @@
           </div>
 
           <div class="md-form">
-            <textarea type="text" id="isi" name="isi" class="md-textarea"></textarea>
+            <textarea type="text" id="isi" name="isi_tugas" class="md-textarea"></textarea>
             <label for="isi">Isi Tugas</label>
           </div>
 
@@ -239,20 +241,10 @@
 
           </div>
 
-          <div class="md-form">
-            <select name="jenis_tugas" class="mdb-select">
-              <option value="" disabled selected>Kelas</option>
-              <option value="Tugas harian">Pilih Kelas</option>
-              <option value="Ujian">Ujian</option>
-              <option value="UAS">UAS</option>
-            </select>
-            <!-- <label>Example label</label> -->
-          </div>
-
         </div>
         <div class="modal-footer">
           <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-          <button type="sumbit" class="btn btn-block btn-success">Buat Tugas</button>
+          <button type="submit" class="btn btn-block btn-success">Buat Tugas</button>
         </div>
       </div>
     </div>

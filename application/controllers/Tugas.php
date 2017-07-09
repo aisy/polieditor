@@ -24,14 +24,14 @@ class Tugas extends CI_Controller {
         $data = array(
             "judul" => $this->input->post('judul'),
             "jenis_tugas" => $this->input->post('jenis_tugas'),
-            "isi tugas" => $this->input->post('isi_tugas'),
+            "isi_tugas" => $this->input->post('isi_tugas'),
             "waktu_mulai" => $tgl_mulai,
             "waktu_selesai" => $tgl_akhir,
             "id_kelas" => $id_kelas
         );
 
         $this->Model_tugas->insert($data);
-        redirect('kelas/' . $id_kelas, 'refresh');
+        redirect('kelas/index/' . $id_kelas, 'refresh');
     }
 
     public function update($id) {
