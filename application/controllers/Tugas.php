@@ -35,12 +35,19 @@ class Tugas extends CI_Controller {
     }
 
     public function update($id) {
-        $tgl_mulai = $this->input->post('tgl_mulai') . " " . $this->input->post('waktu_mulai');
-        $tgl_akhir = $this->input->post('tgl_akhir') . " " . $this->input->post('waktu_akhir');
+        $tgl_mulai = $this->input->post('tgl_mulai') . " " . $this->input->post('wkt_mulai');
+        $tgl_akhir = $this->input->post('tgl_selesai') . " " . $this->input->post('wkt_selesai');
 
-        $data = array("jenis_tugas" => $this->input->post('jenis_tugas'), "isi tugas" => $this->input->post('isi_tugas'), "waktu_mulai" => $tgl_mulai, "waktu_selesai" => $tgl_akhir);
+        $data = array(
+            "judul" => $this->input->post('judul'),
+            "jenis_tugas" => $this->input->post('jenis_tugas'),
+            "isi_tugas" => $this->input->post('isi_tugas'),
+            "waktu_mulai" => $tgl_mulai,
+            "waktu_selesai" => $tgl_akhir
+        );
 
         $this->Model_tugas->update($data, $id);
+        redirect('kelas/index/' . $id);
     }
 
     public function delete($id, $id_kelas) {
