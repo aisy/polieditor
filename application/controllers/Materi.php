@@ -25,6 +25,7 @@ class Materi extends CI_Controller{
 
     $config['upload_path'] = $upload_dir;
     $config['allowed_types'] = 'ppt|pdf|docx';
+    $config['encrypt_name'] = true;
     $this->load->library('upload', $config);
 
     if ($this->upload->do_upload('nama_file')) {
