@@ -31,6 +31,7 @@ class Materi extends CI_Controller{
     if ($this->upload->do_upload('nama_file')) {
       $data = array(
         "id_dosen" => $this->session->userdata('nip'),
+        "id_kelas" => $this->input->post('id_kelas'),
         "judul" => $this->input->post('judul'),
         "keterangan" => $this->input->post('keterangan'),
         "nama_file" => $upload_dir . $this->upload->data('file_name')

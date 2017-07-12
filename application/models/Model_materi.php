@@ -15,12 +15,12 @@ class Model_materi extends CI_Model
         parent::__construct();
     }
     public function all() {
-//        $this->db->join('kelas', 'kelas.id_kelas = materi.id_kelas');
+        $this->db->join('kelas', 'kelas.id_kelas = materi.id_kelas');
         return $this->db->get($this->table)->result();
     }
 
     public function find($id) {
-//        $this->db->join('kelas', 'kelas.id_kelas = materi.id_kelas');
+        $this->db->join('kelas', 'kelas.id_kelas = materi.id_kelas');
         $this->db->where($this->primaryKey, $id);
         return $this->db->get($this->table)->row();
     }
