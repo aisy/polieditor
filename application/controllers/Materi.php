@@ -23,7 +23,7 @@ class Materi extends CI_Controller{
     }
 
     $config['upload_path'] = $upload_dir;
-    $config['allowed_types'] = 'gif|jpg|png';
+    $config['allowed_types'] = 'ppt|pdf|docx';
     $this->load->library('upload', $config);
 
     if ($this->upload->do_upload('nama_file')) {
@@ -34,10 +34,10 @@ class Materi extends CI_Controller{
         "nama_file" => $this->upload->data('file_name')
       );
       $this->Model_materi->insert($data);
-      redirect(base_url('kelas/index/' . $this->input->post('id_kelas')));
     } else {
       echo $this->upload->display_errors();
     }
+    redirect(base_url('kelas/index/' . $this->input->post('id_kelas')));
   }
 
   // ===========================================================================
