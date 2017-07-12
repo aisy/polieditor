@@ -191,7 +191,87 @@
   </div>
 </main>
 
-<!-- Modal Edit Tugas -->
+<!-- MODAL TAMBAH TUGAS  -->
+<form class="" action="<?= base_url('tugas/insert') ?>" method="post">
+  <div class="modal fade" id="tambah_tugas" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id=""><i class="fa fa-plus-square" class="left"></i> Tambah Tugas</h4>
+        </div>
+        <div class="modal-body">
+
+          <input type="hidden" name="id_kelas" value="<?= $kelas->id_kelas ?>">
+
+          <div class="md-form">
+            <input type="text" name="judul" id="judul" class="form-control">
+            <label for="judul" class="">Judul Tugas</label>
+          </div>
+
+          <div class="md-form">
+            <select name="jenis_tugas" class="mdb-select">
+              <option value="" disabled selected>Jenis Tugas</option>
+              <option value="Tugas harian">Tugas Harian</option>
+              <option value="Ujian">Ujian</option>
+              <option value="UAS">UAS</option>
+            </select>
+            <!-- <label>Example label</label> -->
+          </div>
+
+          <div class="md-form">
+            <textarea type="text" id="isi" name="isi_tugas" class="md-textarea"></textarea>
+            <label for="isi">Isi Tugas</label>
+          </div>
+
+          <div class="md-form">
+
+            <div class="form-inline">
+              <div clas
+              <!--                   s="md-form form-group">-->
+              <input  Modal Tambah Materi r="Pilih Tanggal" name="tgl_mulai" type="text" id="date-picker-example"
+                      class="form-control datepicker">
+              <label for="date-picker-example">Tanggal Mulai</label>
+            </div>
+
+            <div class="md-form form-group">
+              <input placeholder="Pilih Waktu" name="wkt_mulai" type="text" id="input_starttime"
+                     class="form-control timepicker">
+              <label for="input_starttime">Waktu Mulai</label>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="md-form">
+
+          <div class="form-inline">
+            <div class="md-form form-group">
+              <input placeholder="Pilih Tanggal" name="tgl_selesai" type="text"
+                     id="date-picker-example" class="form-control datepicker">
+              <label for="date-picker-example">Tanggal Selesai</label>
+            </div>
+
+            <div class="md-form form-group">
+              <input placeholder="Pilih Waktu" name="wkt_selesai" type="text" id="input_endtime"
+                     class="form-control timepicker">
+              <label for="input_starttime">Waktu Selesai</label>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+        <button type="submit" class="btn btn-block btn-success">Buat Tugas</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</form>
+
+<!-- MODAL EDIT TUGAS -->
 <?php foreach ($tugas as $row) {
 
   $tanggal_mulai = date("Y-m-d", strtotime($row->waktu_mulai));
@@ -292,86 +372,9 @@
   </div>
 </form>
 <?php } ?>
-<!-- MODAL TAMBAH TUGAS  -->
-<form class="" action="<?= base_url('tugas/insert') ?>" method="post">
-  <div class="modal fade" id="tambah_tugas" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id=""><i class="fa fa-plus-square" class="left"></i> Tambah Tugas</h4>
-        </div>
-        <div class="modal-body">
 
-          <input type="hidden" name="id_kelas" value="<?= $kelas->id_kelas ?>">
-
-          <div class="md-form">
-            <input type="text" name="judul" id="judul" class="form-control">
-            <label for="judul" class="">Judul Tugas</label>
-          </div>
-
-          <div class="md-form">
-            <select name="jenis_tugas" class="mdb-select">
-              <option value="" disabled selected>Jenis Tugas</option>
-              <option value="Tugas harian">Tugas Harian</option>
-              <option value="Ujian">Ujian</option>
-              <option value="UAS">UAS</option>
-            </select>
-            <!-- <label>Example label</label> -->
-          </div>
-
-          <div class="md-form">
-            <textarea type="text" id="isi" name="isi_tugas" class="md-textarea"></textarea>
-            <label for="isi">Isi Tugas</label>
-          </div>
-
-          <div class="md-form">
-
-            <div class="form-inline">
-              <div class="md-form form-group">
-                <input placeholder="Pilih Tanggal" name="tgl_mulai" type="text" id="date-picker-example"
-                       class="form-control datepicker">
-                <label for="date-picker-example">Tanggal Mulai</label>
-              </div>
-
-              <div class="md-form form-group">
-                <input placeholder="Pilih Waktu" name="wkt_mulai" type="text" id="input_starttime"
-                       class="form-control timepicker">
-                <label for="input_starttime">Waktu Mulai</label>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="md-form">
-
-            <div class="form-inline">
-              <div class="md-form form-group">
-                <input placeholder="Pilih Tanggal" name="tgl_selesai" type="text"
-                       id="date-picker-example" class="form-control datepicker">
-                <label for="date-picker-example">Tanggal Selesai</label>
-              </div>
-
-              <div class="md-form form-group">
-                <input placeholder="Pilih Waktu" name="wkt_selesai" type="text" id="input_endtime"
-                       class="form-control timepicker">
-                <label for="input_starttime">Waktu Selesai</label>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-        <div class="modal-footer">
-          <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-          <button type="submit" class="btn btn-block btn-success">Buat Tugas</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</form>
-
-<form class="" action="index.html" method="post" enctype="multipart/form-data">
+<!-- MODAL TAMBAH MATERI -->
+<form class="" action="<?= base_url('Materi/insert') ?>" method="post" enctype="multipart/form-data">
   <div class="modal fade" id="tambah_materi" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -380,6 +383,9 @@
           <h4 class="modal-title" id=""><i class="fa fa-plus-square" class="left"></i> Tambah Materi</h4>
         </div>
         <div class="modal-body">
+
+          <input type="hidden" name="id_kelas" value="<?= $kelas->id_kelas ?>">
+          <input type="hidden" name="nama_kelas" value="<?= $kelas->nama_kelas ?>">
 
           <div class="md-form">
             <input type="text" name="judul" id="judul" class="form-control">
@@ -390,7 +396,7 @@
             <div class="file-field">
               <div class="btn btn-primary btn-sm">
                 <span>Pilih file</span>
-                <input type="file">
+                <input type="file" name="nama_file">
               </div>
               <div class="file-path-wrapper">
                 <input class="file-path validate" type="text" placeholder="Upload your file">
@@ -399,8 +405,8 @@
           </div>
 
           <div class="md-form">
-            <textarea type="text" id="isi" name="isi" class="md-textarea"></textarea>
-            <label for="isi">Keterangan</label>
+            <textarea type="text" id="keterangan" name="keterangan" class="md-textarea"></textarea>
+            <label for="keterangan">Keterangan</label>
           </div>
 
         </div>
