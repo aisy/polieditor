@@ -7,11 +7,12 @@ class Kelas extends CI_Controller{
   {
     parent::__construct();
     //Codeigniter : Write Less Do More
-    $this->load->model(array('Model_kelas', 'Model_tugas'));
+    $this->load->model(array('Model_kelas', 'Model_tugas', 'Model_materi'));
   }
 
   public function index($id){
     $data['tugas'] = $this->Model_tugas->where('tugas.id_kelas', $id);
+    $data['materi'] = $this->Model_materi->where('materi.id_kelas', $id);
     $data['kelas'] = $this->Model_kelas->find($id);
     $this->load->view('kelas', $data);
   }
