@@ -16,7 +16,8 @@ class Materi extends CI_Controller{
 
   public function insert() {
 
-    $upload_dir = FCPATH . 'folder_materi/' . $this->input->post('id_kelas') . '_' . $this->input->post('nama_kelas');
+    $upload_dir = 'folder_materi/' . $this->input->post('id_kelas') . '_' . $this->input->post('nama_kelas') . "/";
+
     if(!is_dir($upload_dir)) {
       echo $upload_dir;
       mkdir($upload_dir, 0775, true);
@@ -31,13 +32,20 @@ class Materi extends CI_Controller{
         "id_dosen" => $this->session->userdata('nip'),
         "judul" => $this->input->post('judul'),
         "keterangan" => $this->input->post('keterangan'),
-        "nama_file" => $this->upload->data('file_name')
+        "nama_file" => $upload_dir . $this->upload->data('file_name')
       );
       $this->Model_materi->insert($data);
     } else {
       echo $this->upload->display_errors();
     }
     redirect(base_url('kelas/index/' . $this->input->post('id_kelas')));
+  }
+
+  public function delete($id, $id_kelas) {
+    $nama_file = $this->Model_materi->find($id)->nama_file;
+    unlink($nama_file);
+    $this->Model_materi->delete($id);
+    redirect(base_url('kelas/index/' . $id_kelas));
   }
 
   // ===========================================================================

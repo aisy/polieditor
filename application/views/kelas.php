@@ -35,7 +35,7 @@
       <!-- Tab panels -->
       <div class="tab-content card">
 
-        <!--Panel 1-->
+        <!-- Panel Tugas -->
         <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
           <div class="center text-xs-center">
             <button class="btn btn-primary" data-toggle="modal" data-target="#tambah_tugas">
@@ -87,9 +87,8 @@
             </div>
           </div>
         </div>
-        <!--/.Panel 1-->
 
-        <!--Panel 2-->
+        <!-- Panel Materi -->
         <div class="tab-pane fade" id="panel2" role="tabpanel">
           <div class="center text-xs-center">
             <button class="btn btn-primary" data-toggle="modal" data-target="#tambah_materi">
@@ -120,13 +119,13 @@
                     <td><?= $row->keterangan ?></td>
                     <td>
                       <div class="btn-group btn-group-sm">
-                        <button type="button" class="btn btn-primary" onclick="window.location='<?= base_url("folder_materi/" . $kelas->id_kelas . "_" . $kelas->nama_kelas . "/" . $row->nama_file) ?>'">
+                        <button type="button" class="btn btn-primary" onclick="window.location='<?= base_url($row->nama_file) ?>'">
                           <i class="fa fa-download"></i>
                         </button>
                         <button type="button" class="btn btn-warning">
                           <i class="fa fa-edit"></i>
                         </button>
-                        <button type="button" class="btn btn-danger">
+                        <button type="button" class="btn btn-danger" onclick="window.location='<?= base_url('Materi/delete/' . $row->id_materi . "/" . $kelas->id_kelas) ?>'">
                           <i class="fa fa-trash"></i>
                         </button>
                       </div>
@@ -140,9 +139,8 @@
             </div>
           </div>
         </div>
-        <!--/.Panel 2-->
 
-        <!--Panel 3-->
+        <!-- Panel Mahasiswa -->
         <div class="tab-pane fade" id="panel3" role="tabpanel">
           <div class="center text-xs-center">
             <button class="btn btn-primary" data-toggle="modal" data-target="#tambah_mahasiswa">
@@ -185,7 +183,7 @@
             </div>
           </div>
         </div>
-        <!--/.Panel 3-->
+
       </div>
     </div>
   </div>

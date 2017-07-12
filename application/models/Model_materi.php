@@ -20,7 +20,7 @@ class Model_materi extends CI_Model
     }
 
     public function find($id) {
-        $this->db->join('kelas', 'kelas.id_kelas = materi.id_kelas');
+//        $this->db->join('kelas', 'kelas.id_kelas = materi.id_kelas');
         $this->db->where($this->primaryKey, $id);
         return $this->db->get($this->table)->row();
     }
