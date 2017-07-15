@@ -32,4 +32,19 @@ class Mahasiswa extends CI_Controller{
     print_r($log);
   }
 
+<<<<<<< HEAD
+=======
+    public function index(){
+        $this->load->view('mhs_dashboard');
+    }
+
+    public function list(){
+    	$this->load->view('mhs_list');
+    }
+
+    public function profil(){
+    	
+    }
+
+>>>>>>> ad240c42a0c37e6211328743b19719ad6cf6217e
 }
