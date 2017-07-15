@@ -44,6 +44,16 @@ class Kelas extends CI_Controller{
     redirect('dosen/', 'refresh');
   }
 
+  // ===========================================================================
+  // SERVICE
+  // ===========================================================================
+
+  public function kelas_mahasiswa($id){
+
+    $data = $this->db->get_where('kelas', array('id_kelas'=>$id));
+
+  }
+
 }
 
 ?>

@@ -44,4 +44,17 @@ class Model_materi extends CI_Model
         $this->db->where($this->primaryKey, $id);
         $this->db->delete($this->table);
     }
+
+    // =========================================================================
+    // SERVICE
+    // =========================================================================
+
+    public function getMateriKelas($id){
+      $this->db->join('kelas', 'kelas.id_kelas = materi.id_kelas');
+      $this->db->where('materi.id_kelas', $id);
+      $data = $this->db->get($this->table);
+
+      return $data->result();
+    }
+
 }

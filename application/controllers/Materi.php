@@ -65,8 +65,8 @@ class Materi extends CI_Controller{
      exit;
   }
 
-  public function get($id){
-    $respone = "";
+  public function getMateri($id){
+    $response = $this->Model_materi->getMateriKelas($id);
 
     $this->output
      ->set_status_header(200)

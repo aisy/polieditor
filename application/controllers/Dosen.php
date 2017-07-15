@@ -23,13 +23,20 @@ class Dosen extends CI_Controller {
     $log = $this->Model_dosen->login($username, $password);
 
     // print_r($log);
-    $array = array(
-      'nip'      => $log->nip,
-      'username' =>$log->nama_dosen
-    );
-    $this->session->set_userdata($array);
 
-    redirect('dosen/index', 'refresh');
+    if($log){
+      $array = array(
+        'nip'      => $log->nip,
+        'username' => $log->nama_dosen
+      );
+      $this->session->set_userdata($array);
+
+      redirect('dosen/index', 'refresh');
+    }else{
+      $this->session->set_flashdata('Username atau Password Salah');
+      redirect('Welcome/index');
+    }
+
   }
 
   public function logout($value=''){

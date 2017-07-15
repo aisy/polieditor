@@ -44,4 +44,20 @@ class Model_tugas extends CI_Model
         $this->db->where($this->primaryKey, $id);
         $this->db->delete($this->table);
     }
+
+    // =========================================================================
+    // SERVICE
+    // =========================================================================
+
+    public function getTugas($id){
+      $data = $this->db->get_where('tugas', array('id_tugas'=>$id));
+
+      return $data->first_row();
+    }
+
+    public function getTugasKelas($id){
+      $data = $this->db->get_where('tugas', array('id_kelas'=>$id));
+
+      return $data->result();
+    }
 }
