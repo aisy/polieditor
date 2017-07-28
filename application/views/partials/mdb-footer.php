@@ -16,11 +16,9 @@
         new WOW().init();
     </script>
 
-    <script type="text/javascript">
-        $(function() {
-            $("#lul").hide();
-            $("#show").click(function(){
-                $("#lul").show();
-            });
-        });
+    <script>
+        // SideNav init
+        $(".button-collapse").sideNav();
+        var el = document.querySelector('.custom-scrollbar');
+        Ps.initialize(el);
     </script>

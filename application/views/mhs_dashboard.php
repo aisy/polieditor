@@ -2,95 +2,97 @@
 <?php $this->load->view('partials/mdb-header') ?>
 <!-- /.Primary Style Header -->
 
-<!-- Admin Navbar Open -->
+<!-- Mhs Navbar Open -->
 <?php $this->load->view('partials/mhs_navbar') ?>
-<!-- Admin Navbar Close -->
+<!-- Mhs Navbar Close -->
 
 <!--Main layout-->
 <main id="content">
+  <div class="row">
+    <!-- Card Materi -->
+    <div class="col-md-4">
+      <!--Card-->
+      <div class="card">
+        <!--Card image-->
+        <div class="view overlay hm-white-slight">
+          <img src="<?= base_url('asset/img/best.jpg') ?>" class="img-fluid">
+          <a>
+            <div class="mask waves-effect waves-light"></div>
+          </a>
+        </div>
+        <!--/.Card image-->
 
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs tabs-2 red" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active" data-toggle="tab" href="#panel1" role="tab">Materi</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#panel2" role="tab">Tugas</a>
-    </li>
-  </ul>
-  <!-- Tab panels -->
-  <div class="tab-content card">
-    <!--Panel 1-->
-    <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
-      <br>
-      <table class="table table-striped">
-        <thead class="thead-inverse">
-          <tr>
-            <th>#</th>
-            <th>Judul</th>
-            <th>Nama file</th>
-            <th>Keterangan</th>
-            <th>Tgl upload</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
+        <!--Button-->
+        <a class="btn-floating btn-action"><i class="fa fa-chevron-right"></i></a>
 
-          <?php foreach ($materi as $key => $value) { ?>
-          <tr>
-            <th scope="row">1</th>
-            <td><?= $value->judul ?></td>
-            <td><?= $value->nama_file ?></td>
-            <td><?= $value->keterangan ?></td>
-            <td><?= $value->tanggal_upload ?></td>
-            <td>
-              <a href="<?= $link_download.'/'.$value->nama_file ?>" type="button" class="btn btn-default">
-                <i class="fa fa-download"></i> Download
-              </a>
-            </td>
-          </tr>
-          <?php } ?>
-
-        </tbody>
-      </table>
+        <!--Card content-->
+        <div class="card-block">
+          <!--Title-->
+          <h4 class="card-title">Materi</h4>
+          <hr>
+          <!--Text-->
+          <p class="card-text">Berisi tentang materi mata kuliah dasar pemrogaman web</p>
+        </div>
+        <!--/.Card content-->
+      </div>
     </div>
-    <!--/.Panel 1-->
-    <!--Panel 2-->
-    <div class="tab-pane fade" id="panel2" role="tabpanel">
-      <br>
-      <table class="table table-striped">
-        <thead class="thead-inverse">
-          <tr>
-            <th>#</th>
-            <th>Judul</th>
-            <th>Jenis</th>
-            <th>Waktu Mulai</th>
-            <th>Waktu Selesai</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
+    <!-- Card Materi -->
 
-          <?php foreach ($tugas as $key => $value) { ?>
-          <tr>
-            <th scope="row">1</th>
-            <td><?= $value->judul ?></td>
-            <td><?= $value->jenis_tugas ?></td>
-            <td><?= $value->waktu_mulai ?></td>
-            <td><?= $value->waktu_selesai ?></td>
-            <td>
-              <button type="button" class="btn btn-default">
-                <i class="fa fa-tasks"></i> Kerjakan
-              </button>
-            </td>
-          </tr>
-          <?php } ?>
-
-        </tbody>
-      </table>
+    <!-- Card Latihan -->
+    <div class="col-md-4">
+      <!--Card-->
+      <div class="card">
+        <!--Card image-->
+        <div class="view overlay hm-white-slight">
+          <img src="<?= base_url('asset/img/hard-work.jpg') ?>" class="img-fluid">
+          <a>
+            <div class="mask waves-effect waves-light"></div>
+          </a>
+        </div>
+        <!--/.Card image-->
+        <!--Button-->
+        <a class="btn-floating btn-action"><i class="fa fa-chevron-right"></i></a>
+        <!--Card content-->
+        <div class="card-block">
+          <!--Title-->
+          <h4 class="card-title">Latihan</h4>
+          <hr>
+          <!--Text-->
+          <p class="card-text">Berisi tentang latihan kuliah dasar pemrogaman web</p>
+        </div>
+        <!--/.Card content-->
+      </div>
     </div>
-    <!--/.Panel 2-->
-  </div>
+    <!-- Card Latihan -->
+
+    <!-- Carda Pelatihan -->
+
+    <div class="col-md-4">
+      <!--Card-->
+      <div class="card">
+        <!--Card image-->
+        <div class="view overlay hm-white-slight">
+          <img src="<?= base_url('asset/img/course.jpg') ?>" class="img-fluid">
+          <a>
+            <div class="mask waves-effect waves-light"></div>
+          </a>
+        </div>
+        <!--/.Card image-->
+        <!--Button-->
+        <a class="btn-floating btn-action"><i class="fa fa-chevron-right"></i></a>
+        <!--Card content-->
+        <div class="card-block">
+          <!--Title-->
+          <h4 class="card-title">Penilaian</h4>
+          <hr>
+          <!--Text-->
+          <p class="card-text">Berisi tentang tugas dan ujian mata kuliah dasar pemrogaman web</p>
+        </div>
+        <!--/.Card content-->
+      </div>
+    </div>
+
+    <!-- Carda Pelatihan -->
 
 </main>
 <!--/Main layout-->
