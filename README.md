@@ -7,6 +7,6 @@
 * [ ] Latihan Dashboard
 * [x] Home Penilaian
 * [x] Submit File HTML
-* [ ] List Tugas Essay & Pilihan Ganda
-* [ ] Form Essay
-* [ ] Form Pilihan Ganda
+* [x] List Tugas Essay & Pilihan Ganda
+* [x] Form Essay
+* [x] Form Pilihan Ganda

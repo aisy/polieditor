@@ -16,12 +16,13 @@
       <li>
         <br>
         <ul class="collapsible collapsible-accordion">
+          <li><a href="<?= site_url('mahasiswa') ?>" class="collapsible-header"><i class="fa fa-home"></i> Home</a>
+          </li>
+          </li>
           <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-book"></i> Tugas<i class="fa fa-angle-down rotate-icon"></i></a>
             <div class="collapsible-body">
               <ul>
-                <li><a href="<?php site_url('mahasiswa') ?>" class="waves-effect">Submit HTML</a>
-                </li>
-                <li><a href="#" class="waves-effect">Ipsum</a>
+                <li><a href="<?= site_url('mahasiswa/tugas') ?>" class="waves-effect">Submit HTML</a>
                 </li>
                 </ul>
               </div>
@@ -29,19 +30,16 @@
             <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-book"></i> Materi<i class="fa fa-angle-down rotate-icon"></i></a>
               <div class="collapsible-body">
                 <ul>
-                  <li><a href="#" class="waves-effect">Denim jackets</a>
-                  </li>
-                  <li><a href="#" class="waves-effect">Sneakers</a>
+                  <li><a href="<?= site_url('mahasiswa/materi') ?>" class="waves-effect">Dasar Web</a>
                   </li>
                 </ul>
               </div>
             </li>
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-user"></i>&nbsp;&nbsp;Profil<i class="fa fa-angle-down rotate-icon"></i></a>
+            <li><a href="<?= site_url('mahasiswa/latihan') ?>" class="collapsible-header"><i class="fa fa-book"></i> Latihan</a>
+            <li><a href="#" class="collapsible-header waves-effect arrow-r"><i class="fa fa-user"></i>&nbsp;&nbsp;Profil<i class="fa fa-angle-down rotate-icon"></i></a>
               <div class="collapsible-body">
                 <ul>
-                  <li><a href="#" class="waves-effect">Denim jackets</a>
-                  </li>
-                  <li><a href="#" class="waves-effect">Sneakers</a>
+                  <li><a href="#" class="waves-effect">Ubah Profil</a>
                   </li>
                 </ul>
               </div>

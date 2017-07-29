@@ -9,7 +9,7 @@
 <main id="content">
   <br>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8">
       <div class="text-center">
         <h3>Materi Dasar Web</h3>
         <hr class="mt-2 mb-2">

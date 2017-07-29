@@ -6,6 +6,7 @@
 <?php $this->load->view('partials/mhs_navbar') ?>
 <!-- Mhs Navbar Close -->
 
+
 <main id="content">
     <div class="row">
       <div class="col-md-8">
@@ -16,27 +17,30 @@
             <thead class="thead-inverse">
               <tr>
                 <th>#</th>
-                <th>Data Latihan</th>
+                <th>Nama Soal</th>
+                <th>Jenis Soal</th>
                 <th>Opsi</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <th scope="row">1</th>
-                <td>Tag Dasar HTML</td>
+                <td>Ujian Akhir Semester</td>
+                <td>Pilihan Ganda</td>
                 <td>
                   <div class="btn-group btn-group-sm">
-                      <a href="<?= site_url('mahasiswa/editor')  ?>" type="button" class="btn btn-pink">Mulai
-                      </a>
+                    <a type="button" class="btn btn-pink">Kerjakan
+                    </a>
                     </div>
                 </td>
               </tr>
               <tr>
                 <th scope="row">2</th>
-                <td>Latihan Membuat Tabel</td>
+                <td>Ujian Tengah Semester</td>
+                <td>Essay</td>
                 <td>
                   <div class="btn-group btn-group-sm">
-                      <a href="<?= site_url('mahasiswa/editor')  ?>" type="button" class="btn btn-pink">Mulai
+                      <a type="button" class="btn btn-pink">Kerjakan
                       </a>
                     </div>
                 </td>
@@ -47,6 +51,5 @@
       </div>
     </div>
 </main>
-
 
 <?php $this->load->view('partials/mdb-footer') ?>

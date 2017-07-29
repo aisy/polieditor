@@ -3,20 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Mahasiswa extends CI_Controller{
 
-  public function __construct(){
-    parent::__construct();
-  }
-
   public function index(){
     $this->load->view('mhs_dashboard');
   }
 
   public function materi(){
     $this->load->view('mhs/materi');
-  }
-
-  public function login(){
-
   }
 
   public function latihan(){
@@ -33,6 +25,18 @@ class Mahasiswa extends CI_Controller{
 
   public function tugas(){
     $this->load->view('mhs/tugas_html');
+  }
+
+  public function list_tugas(){
+    $this->load->view('mhs/tugas_soal');
+  }
+
+  public function pilgan(){
+    $this->load->view('mhs/soal_pilgan');
+  }
+
+  public function essay(){
+    $this->load->view('mhs/soal_essay');
   }
 
   }
