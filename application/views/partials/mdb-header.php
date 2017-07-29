@@ -13,4 +13,6 @@
     <!-- Material Design Bootstrap -->
     <link href="<?php echo base_url('asset/mdb/css/mdb.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('asset/css/custom.css') ?>" rel="stylesheet">
+    <!-- Material Fonts Icon -->
+    <link href="<?php echo base_url('asset/material-design-icons/iconfont/material-icons.css') ?>" rel="stylesheet">
 </head>

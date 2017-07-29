@@ -27,4 +27,12 @@ class Mahasiswa extends CI_Controller{
     $this->load->view('mhs/dashboard_latihan');
   }
 
+  public function penilaian(){
+    $this->load->view('mhs/dashboard_penilaian');
+  }
+
+  public function tugas(){
+    $this->load->view('mhs/tugas_html');
+  }
+
   }

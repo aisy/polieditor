@@ -19,7 +19,7 @@
           <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-book"></i> Tugas<i class="fa fa-angle-down rotate-icon"></i></a>
             <div class="collapsible-body">
               <ul>
-                <li><a href="#" class="waves-effect">Ipsum</a>
+                <li><a href="<?php site_url('mahasiswa') ?>" class="waves-effect">Submit HTML</a>
                 </li>
                 <li><a href="#" class="waves-effect">Ipsum</a>
                 </li>
