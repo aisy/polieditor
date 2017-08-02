@@ -21,35 +21,28 @@
               <th>Opsi</th>
             </tr>
           </thead>
+
+
           <tbody>
+
+            <?php foreach($materi as $key => $value) { ?>
             <tr>
               <th scope="row">1</th>
-              <td>Materi Minggu Pertama</td>
+              <td><?= $value['judul'] ?></td>
               <td>
                 <div class="btn-group btn-group-sm">
-                    <button type="button" class="btn btn-info">
+                    <!-- <button type="button" class="btn btn-info">
                       <i class="fa fa-eye"></i>
-                    </button>
-                    <button type="button" class="btn btn-pink">
+                    </button> -->
+                    <a href="<?= $url.$value['nama_file'] ?>" class="btn btn-pink">
                       <i class="fa fa-download"></i>
-                    </button>
+                    </a>
                   </div>
               </td>
             </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Materi Minggu Kedua</td>
-              <td>
-                <div class="btn-group btn-group-sm">
-                    <button type="button" class="btn btn-info">
-                      <i class="fa fa-eye"></i>
-                    </button>
-                    <button type="button" class="btn btn-pink">
-                      <i class="fa fa-download"></i>
-                    </button>
-                  </div>
-              </td>
-            </tr>
+
+            <?php } ?>
+
           </tbody>
         </table>
       </div>
@@ -59,7 +52,7 @@
       <h3>Progress Materi</h3>
       <hr class="mt-2 mb-2">
       <div class="progress">
-        <div class="progress-bar bg-info" role="progressbar" style="width: 10%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+        <progress class="progress" value="<?= count($materi) ?>" max="10"></progress>
       </div>
     </div>
   </div>

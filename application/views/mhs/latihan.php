@@ -20,10 +20,13 @@
                 <th>Opsi</th>
               </tr>
             </thead>
+
             <tbody>
+
+            <?php foreach ($latihan as $key => $value) { ?>
               <tr>
                 <th scope="row">1</th>
-                <td>Tag Dasar HTML</td>
+                <td><?= $value['judul'] ?></td>
                 <td>
                   <div class="btn-group btn-group-sm">
                       <a href="<?= site_url('mahasiswa/editor')  ?>" type="button" class="btn btn-pink">Mulai
@@ -31,17 +34,10 @@
                     </div>
                 </td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Latihan Membuat Tabel</td>
-                <td>
-                  <div class="btn-group btn-group-sm">
-                      <a href="<?= site_url('mahasiswa/editor')  ?>" type="button" class="btn btn-pink">Mulai
-                      </a>
-                    </div>
-                </td>
-              </tr>
+            <?php } ?>
+              
             </tbody>
+
           </table>
         </div>
       </div>

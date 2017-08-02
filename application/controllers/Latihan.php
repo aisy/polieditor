@@ -9,7 +9,7 @@ class Latihan extends CI_Controller{
   }
 
   function index(){
-    $this->load->view('latihan');
+    $this->load->view('mhs/latihan');
     // $this->load->view('sample');
   }
 
