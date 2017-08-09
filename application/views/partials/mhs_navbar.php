@@ -7,7 +7,7 @@
         <div class="logo-wrapper sn-ad-avatar-wrapper">
           <img src="<?php echo base_url('asset/img/images.png') ?>" class="rounded-circle">
           <div class="rgba-stylish-strong">
-            <p class="user white-text">Mahasiswa<br>Aisy Muhammad R</p>
+            <p class="user white-text">Mahasiswa<br><?= $this->session->userdata('nama'); ?></p>
           </div>
         </div>
       </li>
@@ -22,7 +22,7 @@
           <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-book"></i> Tugas<i class="fa fa-angle-down rotate-icon"></i></a>
             <div class="collapsible-body">
               <ul>
-                <li><a href="<?= site_url('mahasiswa/tugas') ?>" class="waves-effect">Submit HTML</a>
+                <li><a href="<?= site_url('mahasiswa/tugas/'.$this->session->userdata('kelas') ) ?>" class="waves-effect">Submit HTML</a>
                 </li>
                 </ul>
               </div>
@@ -30,7 +30,7 @@
             <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-book"></i> Materi<i class="fa fa-angle-down rotate-icon"></i></a>
               <div class="collapsible-body">
                 <ul>
-                  <li><a href="<?= site_url('mahasiswa/materi') ?>" class="waves-effect">Dasar Web</a>
+                  <li><a href="<?= site_url('mahasiswa/materi/'.$this->session->userdata('kelas')) ?>" class="waves-effect">Dasar Web</a>
                   </li>
                 </ul>
               </div>
@@ -57,7 +57,7 @@
           <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
         </div>
         <ul class="nav navbar-nav float-xs-right">
-              <a class="btn btn-sm btn-info btn-rounded wafes-effect waves-light" href="#">Logout</a>
+              <a class="btn btn-sm btn-info btn-rounded wafes-effect waves-light" href="<?= base_url('Mahasiswa/logout') ?>">Logout</a>
         </ul>
       </nav>
       <!--/.Navbar-->

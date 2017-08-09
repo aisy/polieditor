@@ -23,9 +23,9 @@
 
             <tbody>
 
-            <?php foreach ($latihan as $key => $value) { ?>
+            <?php $i=1; foreach ($latihan as $key => $value) { ?>
               <tr>
-                <th scope="row">1</th>
+                <th scope="row"><?= $i ?></th>
                 <td><?= $value['judul'] ?></td>
                 <td>
                   <div class="btn-group btn-group-sm">
@@ -34,7 +34,7 @@
                     </div>
                 </td>
               </tr>
-            <?php } ?>
+            <?php $i++; } ?>
               
             </tbody>
 

@@ -40,6 +40,14 @@ class Mahasiswa extends CI_Controller{
       redirect(base_url('Mahasiswa/index/'.$this->session->userdata('kelas')),'refresh');
       
   }
+
+  public function logout(){
+    
+    $this->session->sess_destroy();
+    
+    redirect(base_url(),'refresh');
+    
+  }
   
   public function index($id){
     $this->load->view('mhs_dashboard');
