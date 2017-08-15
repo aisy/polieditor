@@ -29,13 +29,13 @@
                 <td><?= $value['judul'] ?></td>
                 <td>
                   <div class="btn-group btn-group-sm">
-                      <a href="<?= site_url('mahasiswa/editor')  ?>" type="button" class="btn btn-pink">Mulai
+                      <a href="<?= site_url('mahasiswa/editor/'.$value['id_tugas'])  ?>" type="button" class="btn btn-pink">Mulai
                       </a>
                     </div>
                 </td>
               </tr>
             <?php $i++; } ?>
-              
+
             </tbody>
 
           </table>

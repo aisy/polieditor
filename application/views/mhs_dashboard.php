@@ -23,7 +23,7 @@
         <!--/.Card image-->
 
         <!--Button-->
-        <a class="btn-floating btn-action"><i class="fa fa-chevron-right"></i></a>
+        <a href="<?= site_url('mahasiswa/materi/'.$this->session->userdata('kelas') ) ?>" class="btn-floating btn-action"><i class="fa fa-chevron-right"></i></a>
 
         <!--Card content-->
         <div class="card-block">
@@ -51,7 +51,7 @@
         </div>
         <!--/.Card image-->
         <!--Button-->
-        <a class="btn-floating btn-action"><i class="fa fa-chevron-right"></i></a>
+        <a href="<?= site_url('mahasiswa/latihan/'.$this->session->userdata('kelas') ) ?>" class="btn-floating btn-action"><i class="fa fa-chevron-right"></i></a>
         <!--Card content-->
         <div class="card-block">
           <!--Title-->
@@ -73,13 +73,13 @@
         <!--Card image-->
         <div class="view overlay hm-white-slight">
           <img src="<?= base_url('asset/img/course.jpg') ?>" class="img-fluid">
-          <a>
+          <a >
             <div class="mask waves-effect waves-light"></div>
           </a>
         </div>
         <!--/.Card image-->
         <!--Button-->
-        <a class="btn-floating btn-action"><i class="fa fa-chevron-right"></i></a>
+        <a href="<?= site_url('mahasiswa/penilaian/'.$this->session->userdata('nim') ) ?>" class="btn-floating btn-action"><i class="fa fa-chevron-right"></i></a>
         <!--Card content-->
         <div class="card-block">
           <!--Title-->
