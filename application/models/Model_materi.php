@@ -50,8 +50,8 @@ class Model_materi extends CI_Model
     // =========================================================================
 
     public function getMateriKelas($id){
-      $this->db->join('kelas', 'kelas.id_kelas = materi.id_kelas');
-      $this->db->where('materi.id_kelas', $id);
+      $this->db->select('*');
+      $this->db->where('id_kelas', $id);
       $data = $this->db->get($this->table);
 
       return $data->result();

@@ -70,8 +70,30 @@ class Tugas extends CI_Controller {
     exit;
   }
 
+  public function getLatihan($id){
+    $data = $this->Model_tugas->getLatihan($id);
+
+    $this->output
+    ->set_status_header(200) //header untuk service
+    ->set_content_type('application/json', 'utf-8') //tipe dari data=>pake JSON
+    ->set_output(json_encode($data, JSON_PRETTY_PRINT)) //hasil yang ditampilkan menggunakan json_encode dalam bentuk tampilan cantik
+    ->_display();
+    exit;
+  }
+
   public function getTugasKelas($id){
     $data = $this->Model_tugas->getTugasKelas($id);
+
+    $this->output
+    ->set_status_header(200) //header untuk service
+    ->set_content_type('application/json', 'utf-8') //tipe dari data=>pake JSON
+    ->set_output(json_encode($data, JSON_PRETTY_PRINT)) //hasil yang ditampilkan menggunakan json_encode dalam bentuk tampilan cantik
+    ->_display();
+    exit;
+  }
+
+  public function getLatihanKelas($id){
+    $data = $this->Model_tugas->getLatihanKelas($id);
 
     $this->output
     ->set_status_header(200) //header untuk service

@@ -50,13 +50,25 @@ class Model_tugas extends CI_Model
     // =========================================================================
 
     public function getTugas($id){
-      $data = $this->db->get_where('tugas', array('id_tugas'=>$id));
+      $data = $this->db->get_where('tugas', array('id_tugas'=>$id,'jenis_tugas'=>'Tugas harian'));
+
+      return $data->first_row();
+    }
+
+    public function getLatihan($id){
+      $data = $this->db->get_where('tugas', array('id_tugas'=>$id,'jenis_tugas'=>'Latihan'));
 
       return $data->first_row();
     }
 
     public function getTugasKelas($id){
-      $data = $this->db->get_where('tugas', array('id_kelas'=>$id));
+      $data = $this->db->get_where('tugas', array('id_kelas'=>$id, 'jenis_tugas'=>'Tugas harian'));
+
+      return $data->result();
+    }
+
+    public function getLatihanKelas($id){
+      $data = $this->db->get_where('tugas', array('id_kelas'=>$id,'jenis_tugas'=>'Latihan'));
 
       return $data->result();
     }
