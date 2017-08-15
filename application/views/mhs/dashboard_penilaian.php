@@ -52,7 +52,7 @@
           <h4 class="card-title">Submit Html</h4>
           <hr>
           <!--Button-->
-          <button type="button" class="btn btn-lg btn-block btn-pink" name="button">Pilih</button>
+          <a href="<?= site_url('mahasiswa/submitHtml/'.$this->session->userdata('kelas') ) ?>" type="button" class="btn btn-lg btn-block btn-pink" name="button">Pilih</a>
         </div>
         <!--/.Card content-->
       </div>

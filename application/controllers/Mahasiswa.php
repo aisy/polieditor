@@ -77,13 +77,13 @@ class Mahasiswa extends CI_Controller{
     $this->load->view('mhs/dashboard_penilaian');
   }
 
-  public function tugas($id){
+  public function submitHtml($id){
     $data_tugas    = $this->curl->simple_get($this->API.'Tugas/getTugasKelas/'.$id);
     $data['tugas'] = json_decode($data_tugas, TRUE);
     $this->load->view('mhs/tugas_html', $data);
   }
 
-  public function list_tugas(){
+  public function list_soal(){
     $this->load->view('mhs/tugas_soal');
   }
 

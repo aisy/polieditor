@@ -22,8 +22,8 @@
           </li>
         </li>
         <li>
-          <a href="<?= site_url('mahasiswa/tugas/'.$this->session->userdata('kelas') ) ?>" class="collapsible-header waves-effect arrow-r">
-            <i class="fa fa-book"></i> Tugas
+          <a href="<?= site_url('mahasiswa/penilaian/'.$this->session->userdata('kelas') ) ?>" class="collapsible-header waves-effect arrow-r">
+            <i class="fa fa-book"></i> Penilaian
           </a>
         </li>
         <li>
@@ -37,14 +37,14 @@
           </a>
         </li>
 
-        <li><a href="#" class="collapsible-header waves-effect arrow-r"><i class="fa fa-user"></i>&nbsp;&nbsp;Profil<i class="fa fa-angle-down rotate-icon"></i></a>
+        <!-- <li><a href="#" class="collapsible-header waves-effect arrow-r"><i class="fa fa-user"></i>&nbsp;&nbsp;Profil<i class="fa fa-angle-down rotate-icon"></i></a>
           <div class="collapsible-body">
             <ul>
               <li><a href="#" class="waves-effect">Ubah Profil</a>
               </li>
             </ul>
           </div>
-        </li>
+        </li> -->
       </ul>
 
       <!--/. Side navigation links -->
