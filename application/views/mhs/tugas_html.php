@@ -11,7 +11,7 @@
   <div class="row">
     <div class="col-md-8">
       <div class="text-center">
-        <h3>List Latihan</h3>
+        <h3>Tugas</h3>
         <hr class="mt-2 mb-2">
         <table class="table">
           <thead class="thead-inverse">
