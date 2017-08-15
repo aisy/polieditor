@@ -25,9 +25,9 @@
 
           <tbody>
 
-            <?php foreach($materi as $key => $value) { ?>
+            <?php $i = 1; foreach($materi as $key => $value) { ?>
             <tr>
-              <th scope="row">1</th>
+              <th scope="row"><?= $i++ ?></th>
               <td><?= $value['judul'] ?></td>
               <td>
                 <div class="btn-group btn-group-sm">
