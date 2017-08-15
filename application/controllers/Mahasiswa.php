@@ -19,6 +19,11 @@ class Mahasiswa extends CI_Controller{
       //send POST to service
       $insert = $this->curl->simple_post($this->API2.'/Service/login', $data, array(CURLOPT_BUFFERSIZE => 10));
       $convert = json_decode($insert);
+
+      if (!$convert) {
+        redirect(base_url(),'refresh');
+      }
+
       // print_r($convert);
       //set session
       $array = array(
@@ -30,7 +35,6 @@ class Mahasiswa extends CI_Controller{
       // print_r($this->session->userdata('kelas'));
 
       redirect(base_url('Mahasiswa/index/'.$this->session->userdata('kelas')),'refresh');
-
   }
   public function logout(){
 
@@ -44,9 +48,11 @@ class Mahasiswa extends CI_Controller{
     $this->load->view('mhs_dashboard');
   }
   public function materi($id){
-    if($id==" "){
+
+    if($id==""){
       $id = $this->session->userdata('kelas');
     }
+
     $data_materi    = $this->curl->simple_get($this->API.'Materi/getMateri/'.$id);
     $data['materi'] = json_decode($data_materi, TRUE);
     $data['url']    = $this->API;
