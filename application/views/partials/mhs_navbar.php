@@ -32,7 +32,7 @@
           </a>
         </li>
         <li>
-          <a href="<?= site_url('mahasiswa/latihan'.$this->session->userdata('kelas')) ?>" class="collapsible-header">
+          <a href="<?= site_url('mahasiswa/latihan/'.$this->session->userdata('kelas')) ?>" class="collapsible-header">
             <i class="fa fa-book"></i> Latihan
           </a>
         </li>
