@@ -16,35 +16,11 @@
       <li>
         <br>
         <ul class="collapsible collapsible-accordion">
-          <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-heart"></i> Lorem<i class="fa fa-angle-down rotate-icon"></i></a>
-            <div class="collapsible-body">
-              <ul>
-                <li><a href="#" class="waves-effect">Ipsum</a>
-                </li>
-                <li><a href="#" class="waves-effect">Ipsum</a>
-                </li>
-                <li><a href="#" class="waves-effect">Ipsum</a>
-                </li>
-                <li><a href="#" class="waves-effect">Ipsum</a>
-                </li>
-                <li><a href="#" class="waves-effect">Ipsum</a>
-                </ul>
-              </div>
-            </li>
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-coffee"></i> Spring<i class="fa fa-angle-down rotate-icon"></i></a>
-              <div class="collapsible-body">
-                <ul>
-                  <li><a href="#" class="waves-effect">Denim jackets</a>
-                  </li>
-                  <li><a href="#" class="waves-effect">Sneakers</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </li>
+          <li><a href="<?= base_url('dosen') ?>" class="waves-effect">Data Kelas</a></li>
+        </ul>
+      </li>
         <!--/. Side navigation links -->
-      </ul>
+    </ul>
       <!--/. Sidebar navigation -->
 
       <!--Navbar-->
