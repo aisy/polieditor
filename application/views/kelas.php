@@ -256,8 +256,7 @@
                   <select name="jenis_tugas" class="mdb-select">
                     <option value="" disabled selected>Jenis Tugas</option>
                     <option value="Tugas harian">Tugas Harian</option>
-                    <option value="Ujian">Ujian</option>
-                    <option value="UAS">UAS</option>
+                    <option value="Latihan">Latihan</option>
                   </select>
                   <!-- <label>Example label</label> -->
                 </div>
@@ -270,8 +269,7 @@
                 <div class="md-form">
 
                   <div class="form-inline">
-                    <div clas
-                    <!--                   s="md-form form-group">-->
+                    <div class="md-form form-group">
                     <input  Modal Tambah Materi r="Pilih Tanggal" name="tgl_mulai" type="text" id="date-picker-example"
                     class="form-control datepicker">
                     <label for="date-picker-example">Tanggal Mulai</label>
@@ -345,8 +343,7 @@
                   <select name="jenis_tugas" class="mdb-select">
                     <option value="" disabled selected>Jenis Tugas</option>
                     <option value="Tugas harian" <?= $row->jenis_tugas == "Tugas harian" ? "selected" : "" ?>>Tugas Harian</option>
-                    <option value="Ujian" <?= $row->jenis_tugas == "Ujian" ? "selected" : "" ?>>Ujian</option>
-                    <option value="UAS" <?= $row->jenis_tugas == "UAS" ? "selected" : "" ?>>UAS</option>
+                    <option value="Latihan" <?= $row->jenis_tugas == "Latihan" ? "selected" : "" ?>>Latihan</option>
                   </select>
                   <!-- <label>Example label</label> -->
                 </div>
