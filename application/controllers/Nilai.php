@@ -10,7 +10,12 @@ class Nilai extends CI_Controller{
   }
 
   function index($nim){
-    $this->load->view('nilai');
+    $dir = "http://localhost/polieditor/folder_tugas/";
+    $files = opendir($dir."TI-4D".'/');
+
+    print_r($files);
+
+    // $this->load->view('nilai');
   }
 
   public function insert(){

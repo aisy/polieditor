@@ -7,7 +7,7 @@ class Soal extends CI_Controller{
   {
     parent::__construct();
     //Codeigniter : Write Less Do More
-    $this->load->model(array('Model_soal','Model_ujian','Model_essay'));
+    $this->load->model(array('Model_soal','Model_ujian','Model_essay','Model_jawaban'));
   }
 
   function index(){
@@ -178,6 +178,17 @@ class Soal extends CI_Controller{
 
   public function list_pilgan($id){
     $response = $this->Model_soal->where('id_ujian',$id);
+
+    $this->output
+     ->set_status_header(200)
+     ->set_content_type('application/json', 'utf-8')
+     ->set_output(json_encode($response, JSON_PRETTY_PRINT))
+     ->_display();
+     exit;
+  }
+
+  public function list_essay($id){
+    $response = $this->Model_essay->where('id_ujian',$id);
 
     $this->output
      ->set_status_header(200)
