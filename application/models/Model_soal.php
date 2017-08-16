@@ -9,7 +9,6 @@ class Model_soal extends CI_Model {
         parent::__construct();
     }
 
-
     public function all() {
         return $this->db->get($this->table)->result();
     }

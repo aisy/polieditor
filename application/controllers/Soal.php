@@ -24,7 +24,8 @@ class Soal extends CI_Controller{
     $object = array(
       'id_kelas'    => $id_kelas,
       'nama_ujian'  => $this->input->post('nama_ujian'),
-      'keterangan'  => $this->input->post('keterangan')
+      'keterangan'  => $this->input->post('keterangan'),
+      'jenis_ujian' => $this->input->post('jenis_ujian');
     );
 
     // $this->Model_ujian->insert($object);
@@ -68,5 +69,17 @@ class Soal extends CI_Controller{
     // print_r($object);
     redirect(base_url('kelas/index/'.$kelas), 'refresh');
   }
+
+  public function list_pilgan($id){
+    $response = $this->Model_soal->where('id_ujian',$id);
+
+    $this->output
+     ->set_status_header(200)
+     ->set_content_type('application/json', 'utf-8')
+     ->set_output(json_encode($response, JSON_PRETTY_PRINT))
+     ->_display();
+     exit;
+  }
+
 
 }

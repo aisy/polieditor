@@ -150,6 +150,7 @@
                 <button class="btn btn-primary" data-toggle="modal" data-target="#tambah_ujian">
                   <i class="fa fa-plus-square left"></i> Tambah Ujian
                 </button>
+
                 <hr>
 
               </div>
@@ -162,7 +163,7 @@
                         <thead>
                           <th>#</th>
                           <th>Nama Ujian</th>
-                          <th>Keterangan</th>
+                          <th>Jenis</th>
                           <th>Pilihan</th>
                         </thead>
                       </tr>
@@ -172,7 +173,7 @@
                           <tbody>
                             <td><?= $no++ ?></td>
                             <td><?= $row->nama_ujian ?></td>
-                            <td><?= $row->keterangan ?></td>
+                            <td><?= $row->jenis_ujian ?></td>
                             <td>
                               <div class="btn-group btn-group-sm">
                                 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit_ujian<?= $row->id_ujian ?>">
@@ -270,199 +271,152 @@
 
                   <div class="form-inline">
                     <div class="md-form form-group">
-                    <input  Modal Tambah Materi r="Pilih Tanggal" name="tgl_mulai" type="text" id="date-picker-example"
-                    class="form-control datepicker">
-                    <label for="date-picker-example">Tanggal Mulai</label>
+                      <input  Modal Tambah Materi r="Pilih Tanggal" name="tgl_mulai" type="text" id="date-picker-example"
+                      class="form-control datepicker">
+                      <label for="date-picker-example">Tanggal Mulai</label>
+                    </div>
+
+                    <div class="md-form form-group">
+                      <input placeholder="Pilih Waktu" name="wkt_mulai" type="text" id="input_starttime"
+                      class="form-control timepicker">
+                      <label for="input_starttime">Waktu Mulai</label>
+                    </div>
                   </div>
 
-                  <div class="md-form form-group">
-                    <input placeholder="Pilih Waktu" name="wkt_mulai" type="text" id="input_starttime"
-                    class="form-control timepicker">
-                    <label for="input_starttime">Waktu Mulai</label>
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="md-form">
-
-                <div class="form-inline">
-                  <div class="md-form form-group">
-                    <input placeholder="Pilih Tanggal" name="tgl_selesai" type="text"
-                    id="date-picker-example" class="form-control datepicker">
-                    <label for="date-picker-example">Tanggal Selesai</label>
-                  </div>
-
-                  <div class="md-form form-group">
-                    <input placeholder="Pilih Waktu" name="wkt_selesai" type="text" id="input_endtime"
-                    class="form-control timepicker">
-                    <label for="input_starttime">Waktu Selesai</label>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-            <div class="modal-footer">
-              <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-              <button type="submit" class="btn btn-block btn-success">Buat Tugas</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </form>
-
-    <!-- MODAL EDIT TUGAS -->
-    <?php foreach ($tugas as $row) {
-
-      $tanggal_mulai = date("Y-m-d", strtotime($row->waktu_mulai));
-      $tanggal_selesai = date("Y-m-d", strtotime($row->waktu_selesai));
-
-      $wkt_mulai = date("h:i:s", strtotime($row->waktu_mulai));
-      $wkt_selesai = date("h:i:s", strtotime($row->waktu_selesai));
-
-      ?>
-      <form class="" action="<?= base_url('tugas/update/' . $row->id_tugas) ?>" method="post">
-        <div class="modal fade" id="edit_tugas<?= $row->id_tugas ?>" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id=""><i class="fa fa-edit" class="left"></i> Edit Tugas</h4>
-              </div>
-              <div class="modal-body">
-
-                <input type="hidden" name="id_kelas" value="<?= $kelas->id_kelas ?>">
-
-                <div class="md-form">
-                  <input type="text" name="judul" id="judul" class="form-control" value="<?= $row->judul ?>">
-                  <label for="judul" class="">Judul Tugas</label>
-                </div>
-
-                <div class="md-form">
-                  <select name="jenis_tugas" class="mdb-select">
-                    <option value="" disabled selected>Jenis Tugas</option>
-                    <option value="Tugas harian" <?= $row->jenis_tugas == "Tugas harian" ? "selected" : "" ?>>Tugas Harian</option>
-                    <option value="Latihan" <?= $row->jenis_tugas == "Latihan" ? "selected" : "" ?>>Latihan</option>
-                  </select>
-                  <!-- <label>Example label</label> -->
-                </div>
-
-                <div class="md-form">
-                  <textarea type="text" id="isi" name="isi_tugas" class="md-textarea"><?= $row->isi_tugas ?></textarea>
-                  <label for="isi">Isi Tugas</label>
                 </div>
 
                 <div class="md-form">
 
                   <div class="form-inline">
                     <div class="md-form form-group">
-                      <input placeholder="Pilih Tanggal" name="tgl_mulai"
-                      type="text" id="date-picker-example"
-                      class="form-control datepicker"
-                      value="<?= $tanggal_mulai ?>">
-                      <label for="date-picker-example">Tanggal
-                        Mulai</label>
-                      </div>
-
-                      <div class="md-form form-group">
-                        <input placeholder="Pilih Waktu" name="wkt_mulai"
-                        type="text" id="input_starttime"
-                        class="form-control timepicker"
-                        value="<?= $wkt_mulai ?>">
-                        <label for="input_starttime">Waktu Mulai</label>
-                      </div>
+                      <input placeholder="Pilih Tanggal" name="tgl_selesai" type="text"
+                      id="date-picker-example" class="form-control datepicker">
+                      <label for="date-picker-example">Tanggal Selesai</label>
                     </div>
 
+                    <div class="md-form form-group">
+                      <input placeholder="Pilih Waktu" name="wkt_selesai" type="text" id="input_endtime"
+                      class="form-control timepicker">
+                      <label for="input_starttime">Waktu Selesai</label>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                <button type="submit" class="btn btn-block btn-success">Buat Tugas</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- MODAL EDIT TUGAS -->
+      <?php foreach ($tugas as $row) {
+
+        $tanggal_mulai = date("Y-m-d", strtotime($row->waktu_mulai));
+        $tanggal_selesai = date("Y-m-d", strtotime($row->waktu_selesai));
+
+        $wkt_mulai = date("h:i:s", strtotime($row->waktu_mulai));
+        $wkt_selesai = date("h:i:s", strtotime($row->waktu_selesai));
+
+        ?>
+        <form class="" action="<?= base_url('tugas/update/' . $row->id_tugas) ?>" method="post">
+          <div class="modal fade" id="edit_tugas<?= $row->id_tugas ?>" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id=""><i class="fa fa-edit" class="left"></i> Edit Tugas</h4>
+                </div>
+                <div class="modal-body">
+
+                  <input type="hidden" name="id_kelas" value="<?= $kelas->id_kelas ?>">
+
+                  <div class="md-form">
+                    <input type="text" name="judul" id="judul" class="form-control" value="<?= $row->judul ?>">
+                    <label for="judul" class="">Judul Tugas</label>
+                  </div>
+
+                  <div class="md-form">
+                    <select name="jenis_tugas" class="mdb-select">
+                      <option value="" disabled selected>Jenis Tugas</option>
+                      <option value="Tugas harian" <?= $row->jenis_tugas == "Tugas harian" ? "selected" : "" ?>>Tugas Harian</option>
+                      <option value="Latihan" <?= $row->jenis_tugas == "Latihan" ? "selected" : "" ?>>Latihan</option>
+                    </select>
+                    <!-- <label>Example label</label> -->
+                  </div>
+
+                  <div class="md-form">
+                    <textarea type="text" id="isi" name="isi_tugas" class="md-textarea"><?= $row->isi_tugas ?></textarea>
+                    <label for="isi">Isi Tugas</label>
                   </div>
 
                   <div class="md-form">
 
                     <div class="form-inline">
                       <div class="md-form form-group">
-                        <input placeholder="Pilih Tanggal"
-                        name="tgl_selesai" type="text"
-                        id="date-picker-example"
+                        <input placeholder="Pilih Tanggal" name="tgl_mulai"
+                        type="text" id="date-picker-example"
                         class="form-control datepicker"
-                        value="<?= $tanggal_selesai ?>">
+                        value="<?= $tanggal_mulai ?>">
                         <label for="date-picker-example">Tanggal
-                          Selesai</label>
+                          Mulai</label>
                         </div>
 
                         <div class="md-form form-group">
-                          <input placeholder="Pilih Waktu" name="wkt_selesai"
-                          type="text" id="input_endtime"
+                          <input placeholder="Pilih Waktu" name="wkt_mulai"
+                          type="text" id="input_starttime"
                           class="form-control timepicker"
-                          value="<?= $wkt_selesai ?>">
-                          <label for="input_starttime">Waktu Selesai</label>
+                          value="<?= $wkt_mulai ?>">
+                          <label for="input_starttime">Waktu Mulai</label>
                         </div>
                       </div>
 
                     </div>
 
-                  </div>
-                  <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-                    <button type="submit" class="btn btn-block btn-success">Edit
-                      Tugas
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        <?php } ?>
+                    <div class="md-form">
 
-        <!-- MODAL TAMBAH MATERI -->
-        <form class="" action="<?= base_url('Materi/insert') ?>" method="post" enctype="multipart/form-data">
-          <div class="modal fade" id="tambah_materi" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title" id=""><i class="fa fa-plus-square" class="left"></i> Tambah Materi</h4>
-                </div>
-                <div class="modal-body">
+                      <div class="form-inline">
+                        <div class="md-form form-group">
+                          <input placeholder="Pilih Tanggal"
+                          name="tgl_selesai" type="text"
+                          id="date-picker-example"
+                          class="form-control datepicker"
+                          value="<?= $tanggal_selesai ?>">
+                          <label for="date-picker-example">Tanggal
+                            Selesai</label>
+                          </div>
 
-                  <input type="hidden" name="id_kelas" value="<?= $kelas->id_kelas ?>">
-                  <input type="hidden" name="nama_kelas" value="<?= $kelas->nama_kelas ?>">
+                          <div class="md-form form-group">
+                            <input placeholder="Pilih Waktu" name="wkt_selesai"
+                            type="text" id="input_endtime"
+                            class="form-control timepicker"
+                            value="<?= $wkt_selesai ?>">
+                            <label for="input_starttime">Waktu Selesai</label>
+                          </div>
+                        </div>
 
-                  <div class="md-form">
-                    <input type="text" name="judul" id="judul" class="form-control">
-                    <label for="judul" class="">Judul Materi</label>
-                  </div>
-
-                  <div class="md-form">
-                    <div class="file-field">
-                      <div class="btn btn-primary btn-sm">
-                        <span>Pilih file</span>
-                        <input type="file" name="nama_file">
                       </div>
-                      <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text" placeholder="Upload your file">
-                      </div>
+
+                    </div>
+                    <div class="modal-footer">
+                      <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                      <button type="submit" class="btn btn-block btn-success">Edit
+                        Tugas
+                      </button>
                     </div>
                   </div>
-
-                  <div class="md-form">
-                    <textarea type="text" id="keterangan" name="keterangan" class="md-textarea"></textarea>
-                    <label for="keterangan">Keterangan</label>
-                  </div>
-
-                </div>
-                <div class="modal-footer">
-                  <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-                  <button type="sumbit" class="btn btn-block btn-success">Upload Materi</button>
                 </div>
               </div>
-            </div>
-          </div>
-        </form>
+            </form>
+          <?php } ?>
 
-        <!-- MODAL EDIT MATERI -->
-        <?php foreach ($materi as $row) { ?>
-          <form class="" action="<?= base_url('Materi/update/' . $row->id_materi) ?>" method="post" enctype="multipart/form-data">
-            <div class="modal fade" id="edit_materi<?= $row->id_materi ?>" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+          <!-- MODAL TAMBAH MATERI -->
+          <form class="" action="<?= base_url('Materi/insert') ?>" method="post" enctype="multipart/form-data">
+            <div class="modal fade" id="tambah_materi" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -475,7 +429,7 @@
                     <input type="hidden" name="nama_kelas" value="<?= $kelas->nama_kelas ?>">
 
                     <div class="md-form">
-                      <input type="text" name="judul" id="judul" class="form-control" value="<?= $row->judul ?>">
+                      <input type="text" name="judul" id="judul" class="form-control">
                       <label for="judul" class="">Judul Materi</label>
                     </div>
 
@@ -492,30 +446,77 @@
                     </div>
 
                     <div class="md-form">
-                      <textarea type="text" id="keterangan" name="keterangan" class="md-textarea"><?= $row->keterangan ?></textarea>
+                      <textarea type="text" id="keterangan" name="keterangan" class="md-textarea"></textarea>
                       <label for="keterangan">Keterangan</label>
                     </div>
 
                   </div>
                   <div class="modal-footer">
                     <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-                    <button type="sumbit" class="btn btn-block btn-success">Edit Materi</button>
+                    <button type="sumbit" class="btn btn-block btn-success">Upload Materi</button>
                   </div>
                 </div>
               </div>
             </div>
           </form>
-        <?php } ?>
 
-        <!-- MODAL TAMBAH UJIAN -->
-        <form class="" action="<?= base_url('Soal/buat_soal') ?>" method="post">
-          <div class="modal fade" id="tambah_ujian" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title" id=""><i class="fa fa-plus-square" class="left"></i> Tambah Ujian</h4>
+          <!-- MODAL EDIT MATERI -->
+          <?php foreach ($materi as $row) { ?>
+            <form class="" action="<?= base_url('Materi/update/' . $row->id_materi) ?>" method="post" enctype="multipart/form-data">
+              <div class="modal fade" id="edit_materi<?= $row->id_materi ?>" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id=""><i class="fa fa-plus-square" class="left"></i> Tambah Materi</h4>
+                    </div>
+                    <div class="modal-body">
+
+                      <input type="hidden" name="id_kelas" value="<?= $kelas->id_kelas ?>">
+                      <input type="hidden" name="nama_kelas" value="<?= $kelas->nama_kelas ?>">
+
+                      <div class="md-form">
+                        <input type="text" name="judul" id="judul" class="form-control" value="<?= $row->judul ?>">
+                        <label for="judul" class="">Judul Materi</label>
+                      </div>
+
+                      <div class="md-form">
+                        <div class="file-field">
+                          <div class="btn btn-primary btn-sm">
+                            <span>Pilih file</span>
+                            <input type="file" name="nama_file">
+                          </div>
+                          <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder="Upload your file">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="md-form">
+                        <textarea type="text" id="keterangan" name="keterangan" class="md-textarea"><?= $row->keterangan ?></textarea>
+                        <label for="keterangan">Keterangan</label>
+                      </div>
+
+                    </div>
+                    <div class="modal-footer">
+                      <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                      <button type="sumbit" class="btn btn-block btn-success">Edit Materi</button>
+                    </div>
+                  </div>
                 </div>
+              </div>
+            </form>
+          <?php } ?>
+
+          <!-- MODAL TAMBAH UJIAN -->
+          <form class="" action="<?= base_url('Soal/buat_soal') ?>" method="post">
+            <div class="modal fade" id="tambah_ujian" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id=""><i class="fa fa-plus-square" class="left"></i> Tambah Ujian</h4>
+                  </div>
 
                   <div class="modal-body">
 
@@ -532,6 +533,16 @@
                     <input type="hidden" name="id_kelas" value="<?= $kelas->nama_kelas ?>">
 
                     <div class="md-form">
+                      <select name="jenis_ujian" class="mdb-select">
+                        <option value="" disabled selected>Pilih jenis ujian</option>
+                        <option value="pilihan ganda">Pilihan ganda</option>
+                        <option value="essay">essay</option>
+                      </select>
+                    </div>
+
+                    <br>
+
+                    <div class="md-form">
                       <input type="text" name="keterangan" class="form-control" id="kelas" placeholder="">
                       <label for="kelas">Keterangan</label>
                     </div>
@@ -539,72 +550,72 @@
                   </div>
                   <div class="modal-footer">
                     <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-                    <button type="sumbit" class="btn btn-block btn-success">Undang</button>
+                    <button type="sumbit" class="btn btn-block btn-success">Buat Ujian</button>
                   </div>
 
-              </div>
-            </div>
-          </div>
-        </form>
-
-        <!-- MODAL EDIT MATERI -->
-        <?php foreach ($ujian as $row) { ?>
-          <form class="" action="<?= base_url('Ujian/update/' . $row->id_ujian) ?>" method="post" enctype="multipart/form-data">
-            <div class="modal fade" id="edit_ujian<?= $row->id_ujian ?>" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id=""><i class="fa fa-plus-square" class="left"></i> Ubah Ujian</h4>
-                  </div>
-                  <div class="modal-body">
-
-                    <div class="md-form">
-                      <input type="text" name="nama_ujian" class="form-control" id="kelas" value="<?= $row->nama_ujian  ?>">
-                      <label for="kelas">Nama Ujian</label>
-                    </div>
-
-                    <input type="hidden" name="id_kelas" value="<?= $kelas->id_kelas ?>">
-
-                    <div class="md-form">
-                      <input type="text" name="keterangan" class="form-control" id="kelas" value="<?= $row->keterangan ?>">
-                      <label for="kelas">Keterangan</label>
-                    </div>
-
-                  </div>
-                  <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-                    <button type="sumbit" class="btn btn-block btn-success">Edit Ujian</button>
-                  </div>
                 </div>
               </div>
             </div>
           </form>
-        <?php } ?>
 
-        <?php $this->load->view('partials/mdb-footer') ?>
+          <!-- MODAL EDIT Ujian -->
+          <?php foreach ($ujian as $row) { ?>
+            <form class="" action="<?= base_url('Ujian/update/' . $row->id_ujian) ?>" method="post" enctype="multipart/form-data">
+              <div class="modal fade" id="edit_ujian<?= $row->id_ujian ?>" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id=""><i class="fa fa-plus-square" class="left"></i> Ubah Ujian</h4>
+                    </div>
+                    <div class="modal-body">
 
-        <script type="text/javascript">
+                      <div class="md-form">
+                        <input type="text" name="nama_ujian" class="form-control" id="kelas" value="<?= $row->nama_ujian  ?>">
+                        <label for="kelas">Nama Ujian</label>
+                      </div>
 
-        $(document).ready(function () {
-          $('.mdb-select').material_select();
-        });
+                      <input type="hidden" name="id_kelas" value="<?= $kelas->id_kelas ?>">
 
-        $('.datepicker').pickadate({
-          monthsFull: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
-          format: 'yyyy-mm-dd',
-          formatSubmit: 'yyyy/mm/dd',
-          selectMonths: true, // Creates a dropdown to control month
-          // selectYears: 50, // Creates a dropdown of 50 years to control year
-          // min: [1961,0,1],
-          // max: [2017,7,14]
-        });
+                      <div class="md-form">
+                        <input type="text" name="keterangan" class="form-control" id="kelas" value="<?= $row->keterangan ?>">
+                        <label for="kelas">Keterangan</label>
+                      </div>
 
-        $('#input_starttime').pickatime({
-          twelvehour: false
-        });
+                    </div>
+                    <div class="modal-footer">
+                      <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                      <button type="sumbit" class="btn btn-block btn-success">Edit Ujian</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          <?php } ?>
 
-        $('#input_endtime').pickatime({
-          twelvehour: false
-        });
-        </script>
+          <?php $this->load->view('partials/mdb-footer') ?>
+
+          <script type="text/javascript">
+
+          $(document).ready(function () {
+            $('.mdb-select').material_select();
+          });
+
+          $('.datepicker').pickadate({
+            monthsFull: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+            format: 'yyyy-mm-dd',
+            formatSubmit: 'yyyy/mm/dd',
+            selectMonths: true, // Creates a dropdown to control month
+            // selectYears: 50, // Creates a dropdown of 50 years to control year
+            // min: [1961,0,1],
+            // max: [2017,7,14]
+          });
+
+          $('#input_starttime').pickatime({
+            twelvehour: false
+          });
+
+          $('#input_endtime').pickatime({
+            twelvehour: false
+          });
+          </script>
