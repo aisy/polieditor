@@ -179,6 +179,11 @@
                                 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#edit_ujian<?= $row->id_ujian ?>">
                                   <i class="fa fa-edit"></i>
                                 </button>
+
+                                <button type="button" class="btn btn-info" onclick="window.location='<?= base_url('Soal/detail_soal/' . $row->id_ujian . "/" . $kelas->id_kelas) ?>'">
+                                  <i class="fa fa-list"></i>
+                                </button>
+
                                 <button type="button" class="btn btn-danger" onclick="window.location='<?= base_url('Soal/hapus_soal/' . $row->id_ujian . "/" . $kelas->id_kelas) ?>'">
                                   <i class="fa fa-trash"></i>
                                 </button>

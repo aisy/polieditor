@@ -88,6 +88,39 @@ class Soal extends CI_Controller{
     redirect(base_url('kelas/index/'.$kelas), 'refresh');
   }
 
+  public function updateSoal(){
+    $kelas      = $this->input->post('id_kelas');
+    $id_soal = $this->input->post('id_soal');
+    $soal     = $this->input->post('soal');
+    $pilihan1 = $this->input->post('jawaban_a');
+    $pilihan2 = $this->input->post('jawaban_b');
+    $pilihan3 = $this->input->post('jawaban_c');
+    $pilihan4 = $this->input->post('jawaban_d');
+    $jawaban  = $this->input->post('jawaban');
+
+    // echo $soal[0];
+
+    $i = 0;
+    foreach ($soal as $row) {
+      $object = array(
+        "soal"      => $row,
+
+        "pilihan1"  =>$pilihan1[$i],
+        "pilihan2"  =>$pilihan2[$i],
+        "pilihan3"  =>$pilihan3[$i],
+        "pilihan4"  =>$pilihan4[$i],
+
+        "jawaban"   =>$jawaban[$i]
+      );
+      // echo $soal[$i];
+      $this->Model_soal->update($object, $id_soal[$i]);
+      $i++;
+    }
+
+    // print_r($object);
+    redirect(base_url('kelas/index/'.$kelas), 'refresh');
+  }
+
   public function insertEssay(){
     $jml_soal   = $this->input->post('jml_soal');
     $kelas      = $this->input->post('id_kelas');
@@ -108,6 +141,39 @@ class Soal extends CI_Controller{
 
     // print_r($object);
     redirect(base_url('kelas/index/'.$kelas), 'refresh');
+  }
+
+  public function updateEssay(){
+    $kelas      = $this->input->post('id_kelas');
+    $soal     = $this->input->post('soal');
+    $id_soal  = $this->input->post('id_soal');
+
+    $i = 0;
+    foreach ($soal as $row) {
+      $object = array(
+        "soal"      => $row
+      );
+      // echo $soal[$i];
+      $this->Model_essay->update($object, $id_soal[$i++]);
+    }
+
+    // print_r($object);
+    redirect(base_url('kelas/index/'.$kelas), 'refresh');
+  }
+
+  public function detail_soal($id, $kelas) {
+
+    $jenis_ujian = $this->Model_ujian->find($id)->jenis_ujian;
+
+    $data['kelas'] = $kelas;
+
+    if ($jenis_ujian == 'pilihan ganda') {
+      $data['soal'] = $this->Model_soal->where('id_ujian', $id);
+      $this->load->view('soal/soal_edit', $data);
+    } else if ($jenis_ujian == 'essay') {
+      $data['soal'] = $this->Model_essay->where('id_ujian', $id);
+      $this->load->view('soal/soal_essay_edit', $data);
+    }
   }
 
   public function list_pilgan($id){
