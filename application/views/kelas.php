@@ -222,7 +222,7 @@
                           <td><?= $value['nama_mahasiswa'] ?></td>
                           <td>
                             <div class="btn-group btn-group-sm">
-                              <button type="button" class="btn btn-info">
+                              <button type="button" class="btn btn-info" onclick="window.location='<?= base_url('nilai/index/' . $value['nim']) ?>'">
                                 <i class="fa fa-edit"></i>
                               </button>
                             </div>

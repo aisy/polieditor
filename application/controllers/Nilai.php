@@ -9,8 +9,8 @@ class Nilai extends CI_Controller{
     $this->load->model(array('Model_nilai'));
   }
 
-  function index(){
-
+  function index($nim){
+    $this->load->view('nilai');
   }
 
   public function insert(){
