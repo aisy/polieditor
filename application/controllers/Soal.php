@@ -41,9 +41,22 @@ class Soal extends CI_Controller{
 
   }
 
+  public function hapus_soal($id, $kelas) {
+    $jenis_ujian = $this->Model_ujian->find($id)->jenis_ujian;
+
+    if ($jenis_ujian == 'pilihan ganda') {
+      $this->Model_soal->deleteByIdUjian($id);
+    } else if ($jenis_ujian == 'essay') {
+      $this->Model_essay->deleteByIdUjian($id);
+    }
+
+    $this->Model_ujian->delete($id);
+    redirect(base_url('kelas/index/'.$kelas), 'refresh');
+  }
+
   public function insertSoal(){
     $jml_soal   = $this->input->post('jml_soal');
-    $kelas      = "TI-4D";
+    $kelas      = $this->input->post('id_kelas');
 
     $soal     = $this->input->post('soal');
     $pilihan1 = $this->input->post('jawaban_a');
@@ -77,7 +90,7 @@ class Soal extends CI_Controller{
 
   public function insertEssay(){
     $jml_soal   = $this->input->post('jml_soal');
-    $kelas      = "TI-4D";
+    $kelas      = $this->input->post('id_kelas');
 
     $soal     = $this->input->post('soal');
 

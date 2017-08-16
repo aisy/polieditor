@@ -37,5 +37,9 @@ class Model_soal extends CI_Model {
         $this->db->delete($this->table);
     }
 
+  public function deleteByIdUjian($id) {
+    $this->db->where('id_ujian', $id);
+    $this->db->delete($this->table);
+  }
 
 }
