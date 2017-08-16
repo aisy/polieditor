@@ -7,7 +7,7 @@ class Soal extends CI_Controller{
   {
     parent::__construct();
     //Codeigniter : Write Less Do More
-    $this->load->model(array('Model_soal','Model_ujian'));
+    $this->load->model(array('Model_soal','Model_ujian','Model_essay'));
   }
 
   function index(){
@@ -25,15 +25,20 @@ class Soal extends CI_Controller{
       'id_kelas'    => $id_kelas,
       'nama_ujian'  => $this->input->post('nama_ujian'),
       'keterangan'  => $this->input->post('keterangan'),
-      'jenis_ujian' => $this->input->post('jenis_ujian');
+      'jenis_ujian' => $this->input->post('jenis_ujian')
     );
 
-    // $this->Model_ujian->insert($object);
+    $this->Model_ujian->insert($object);
     $data_terakhir = $this->Model_ujian->lastRow();
 
     $data['id_ujian'] = $data_terakhir->id_ujian;
 
-    $this->load->view('soal/soal', $data);
+    if($data_terakhir->jenis_ujian=="essay"){
+      $this->load->view('soal/soal_essay', $data);
+    }else{
+      $this->load->view('soal/soal', $data);
+    }
+
   }
 
   public function insertSoal(){
@@ -64,6 +69,28 @@ class Soal extends CI_Controller{
       );
       // echo $soal[$i];
       $this->Model_soal->insert($object);
+    }
+
+    // print_r($object);
+    redirect(base_url('kelas/index/'.$kelas), 'refresh');
+  }
+
+  public function insertEssay(){
+    $jml_soal   = $this->input->post('jml_soal');
+    $kelas      = "TI-4D";
+
+    $soal     = $this->input->post('soal');
+
+    // echo $soal[0];
+
+    $object = array();
+    for ($i=0; $i<$jml_soal; $i++) {
+      $object = array(
+        "id_ujian"  =>$this->input->post('id_ujian'),
+        "soal"      =>$soal[$i],
+      );
+      // echo $soal[$i];
+      $this->Model_essay->insert($object);
     }
 
     // print_r($object);

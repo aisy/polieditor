@@ -16,7 +16,7 @@
 
         <div class="container">
           <div class="row">
-            <form class="" action="<?= base_url('Soal/insertSoal') ?>" method="post">
+            <form class="" action="<?= base_url('Soal/insertEssay') ?>" method="post">
 
               <input type="hidden" name="jml_soal" value="<?= $jml ?>">
               <input type="hidden" name="id_kelas" value="<?= $kelas ?>">
