@@ -16,7 +16,7 @@ class Nilai extends CI_Controller{
   public function insert(){
     // $data = (array)json_decode(file_get_contents('php://input'));
     $data = array(
-      'id_ujian'=>$this->input->post('id_ujian'),
+      'nama_nilai'=>$this->input->post('nama_ujian'),
       'nim'     =>$this->input->post('nim'),
       'nilai'   =>$this->input->post('nilai')
     );
