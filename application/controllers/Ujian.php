@@ -14,6 +14,17 @@ class Ujian extends CI_Controller{
 
   }
 
+  public function listUjian($id){
+    $response = $this->Model_ujian->where('id_kelas',$id);
+
+    $this->output
+     ->set_status_header(200)
+     ->set_content_type('application/json', 'utf-8')
+     ->set_output(json_encode($response, JSON_PRETTY_PRINT))
+     ->_display();
+     exit;
+  }
+
   public function update($id){
     $object = array(
       'id_kelas'    => $this->input->post('id_kelas'),
