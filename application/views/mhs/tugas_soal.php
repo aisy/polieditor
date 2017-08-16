@@ -23,28 +23,30 @@
               </tr>
             </thead>
             <tbody>
+
+              <?php $i=1; foreach ($soal as $key => $value) { ?>
+
               <tr>
-                <th scope="row">1</th>
-                <td>Ujian Akhir Semester</td>
-                <td>Pilihan Ganda</td>
+                <th scope="row"><?= $i ?></th>
+                <td><?= $value['nama_ujian'] ?></td>
+                <td><?= $value['jenis_ujian'] ?></td>
                 <td>
                   <div class="btn-group btn-group-sm">
-                    <a type="button" class="btn btn-pink">Kerjakan
+                    <?php if($value['jenis_ujian']=="pilihan ganda"){ ?>
+                    <a href="<?= base_url('mahasiswa/pilgan/'.$value['id_ujian']) ?>" type="button" class="btn btn-pink">
+                      Kerjakan
                     </a>
+                  <?php }else{ ?>
+                    <a href="<?= base_url('mahasiswa/essay/'.$value['id_ujian']) ?>" type="button" class="btn btn-pink">
+                      Kerjakan
+                    </a>
+                  <?php } ?>
                     </div>
                 </td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Ujian Tengah Semester</td>
-                <td>Essay</td>
-                <td>
-                  <div class="btn-group btn-group-sm">
-                      <a type="button" class="btn btn-pink">Kerjakan
-                      </a>
-                    </div>
-                </td>
-              </tr>
+
+            <?php $i++; } ?>
+
             </tbody>
           </table>
         </div>

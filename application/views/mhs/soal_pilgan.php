@@ -11,46 +11,53 @@
 
 <main id="content">
     <div class="row">
-      <div class="col-md-8">
+      <h3>Soal Essay</h3>
+      <hr class="mt-2 mb-2">
+      <div class="col-md-12">
+        <form class="" action="<?= base_url('Penilaian/nilai_pilgan') ?>" method="post">
+
+        <?php $i=1; foreach ($tugas as $key => $value) { ?>
         <div class="text-center">
-          <h3>Soal Essay</h3>
-          <hr class="mt-2 mb-2">
           <p>
-            <strong>1.</strong>&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <strong><?= $i ?>.</strong>&nbsp;
+            <?= $value['soal'] ?>
           </p>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="text-center">
-          <h3>List Soal</h3>
-          <hr class="mt-2 mb-2">
-          <?php for($i=1; $i<=9; $i++) { ?>
-          <a href="#" class="btn btn-sm btn-pink"><?= $i ?></a>
-          <?php } ?>
-        </div>
-      </div>
-      <div class="col-md-8">
+
       <fieldset class="form-group">
           <strong>Jawaban : </strong>
       </fieldset>
       <!-- Pilihan Ganda -->
       <fieldset class="form-group">
-          <input name="group1" type="radio" id="radio1">
-          <label for="radio1">Variabel</label>
+          <input value="A" name="group1<?= $i-1 ?>" type="radio" id="radio1<?= $i ?>">
+          <label for="radio1<?= $i ?>"><?= $value['pilihan1'] ?></label>
       </fieldset>
+
       <fieldset class="form-group">
-          <input name="group1" type="radio" id="radio2">
-          <label for="radio2">Konstanta</label>
+          <input value="B" name="group1<?= $i-1 ?>" type="radio" id="radio2<?= $i ?>">
+          <label for="radio2<?= $i ?>"><?= $value['pilihan2'] ?></label>
+      </fieldset>
+
       <fieldset class="form-group">
+          <input value="C" name="group1<?= $i-1 ?>" type="radio" id="radio3<?= $i ?>">
+          <label for="radio3<?= $i ?>"><?= $value['pilihan3'] ?></label>
       </fieldset>
-          <input name="group1" type="radio" id="radio3">
-          <label for="radio3">Let it go</label>
-      </fieldset>
+
+    <fieldset>
+        <input value="D" name="group1<?= $i-1 ?>" type="radio" id="radio4<?= $i ?>">
+        <label for="radio4<?= $i ?>"><?= $value['pilihan4'] ?></label>
+    </fieldset>
+
       <hr class="mt-2 mb-2">
-      <!-- Pilihan Ganda -->
-        <a href="#" class="btn btn-md btn-pink pull-left" ><i class="fa fa-caret-left"></i>&nbsp;PREV</a>
-        <a href="#" class="btn btn-md btn-pink pull-right">NEXT&nbsp;<i class="fa fa-caret-right"></i></a>
+        <?php $i++; } ?>
+
+        <input type="hidden" name="id_ujian" value="<?= $id_ujian ?>">
+
+        <button type="submit" class="btn btn-success btn-block" name="button">Selesai</button>
+      </form>
       </div>
+
+
 
     </div>
 </main>

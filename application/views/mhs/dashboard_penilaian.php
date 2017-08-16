@@ -9,33 +9,9 @@
 <!--Main layout-->
 <main id="content">
   <div class="row">
-    <!-- Card Materi -->
-    <div class="col-md-4">
-      <!--Card-->
-      <div class="card">
-        <!--Card image-->
-        <div class="view overlay hm-white-slight">
-          <img src="<?= base_url('asset/img/best.jpg') ?>" class="img-fluid">
-          <a>
-            <div class="mask waves-effect waves-light"></div>
-          </a>
-        </div>
-        <!--/.Card image-->
-        <!--Card content-->
-        <div class="card-block">
-          <!--Title-->
-          <h4 class="card-title">Pilihan Ganda</h4>
-          <hr>
-          <!--Button-->
-          <button type="button" class="btn btn-lg btn-block btn-pink" name="button">Pilih</button>
-        </div>
-        <!--/.Card content-->
-      </div>
-    </div>
-    <!-- Card Materi -->
 
     <!-- Card Materi -->
-    <div class="col-md-4">
+    <div class="col-md-6">
       <!--Card-->
       <div class="card">
         <!--Card image-->
@@ -60,7 +36,7 @@
     <!-- Card Materi -->
 
     <!-- Card Materi -->
-    <div class="col-md-4">
+    <div class="col-md-6">
       <!--Card-->
       <div class="card">
         <!--Card image-->
@@ -74,10 +50,10 @@
         <!--Card content-->
         <div class="card-block">
           <!--Title-->
-          <h4 class="card-title">Soal Essay</h4>
+          <h4 class="card-title">Soal Essay/Pilihan Ganda</h4>
           <hr>
           <!--Button-->
-          <button type="button" class="btn btn-lg btn-block btn-pink" name="button">Pilih</button>
+          <a href="<?= site_url('mahasiswa/list_soal/'.$this->session->userdata('kelas') ) ?>" type="button" class="btn btn-lg btn-block btn-pink" name="button">Pilih</a>
         </div>
         <!--/.Card content-->
       </div>
