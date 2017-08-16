@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Classname extends CI_Model{
+class Model_nilai extends CI_Model{
 
   protected $table = 'nilai';
   protected $primaryKey = 'id_nilai';
