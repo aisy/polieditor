@@ -29,7 +29,7 @@
                 <td><?= $tugas[$i-1] ?></td>
                 <td>
                   <div class="btn-group btn-group-sm">
-                      <a href="<?= site_url('mahasiswa/editor/'.$value['id_tugas'])  ?>" type="button" class="btn btn-pink">Mulai
+                      <a href="<?= site_url('tugas/nilai_tugas/'.$tugas[$i-1].'/'.$id_kelas.'/'.$id_tugas)  ?>" type="button" class="btn btn-pink">Beri Nilai
                       </a>
                     </div>
                 </td>

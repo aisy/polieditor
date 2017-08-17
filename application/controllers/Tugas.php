@@ -58,6 +58,14 @@ class Tugas extends CI_Controller {
     redirect('kelas/index/' . $id_kelas);
   }
 
+  public function nilai_tugas($id,$id2,$id3){
+    $data['name_file'] = $id;
+    $data['kelas'] = $id2;
+    $data['tugas'] = $id3;
+
+    $this->load->view('tugas/editor_tugas', $data);
+  }
+
   // =========================================================================
   // SERVICE
   // =========================================================================
@@ -82,8 +90,10 @@ class Tugas extends CI_Controller {
 
     $dir = $this->curl->simple_get($this->API.'Tugas/dirTugas/'.$id_kelas."/".$id);
     $data['tugas'] = json_decode($dir);
+    $data['id_kelas'] = $id_kelas;
+    $data['id_tugas'] = $id;
 
-    print_r($data['tugas']);
+    // print_r($data['tugas']);
     $this->load->view('tugas/list_tugas', $data);
   }
 
