@@ -52,6 +52,7 @@
         <?php $i++; } ?>
 
         <input type="hidden" name="id_ujian" value="<?= $id_ujian ?>">
+        <input type="hidden" name="nama_ujian" value="<?= $ujian['nama_ujian'] ?>">
 
         <button type="submit" class="btn btn-success btn-block" name="button">Selesai</button>
       </form>
