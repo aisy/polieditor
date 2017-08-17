@@ -17,3 +17,4 @@ function showHTMLInIFrame() {
 }
 
 editor.on("input", showHTMLInIFrame)
+showHTMLInIFrame()
