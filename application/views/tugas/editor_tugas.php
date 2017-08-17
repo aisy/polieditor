@@ -38,10 +38,14 @@
       </div>
       <br><br>
 <!--   form beri nilai   -->
-      <form action="">
+      <form action="<?= base_url('nilai/insertNilaiUjian/' . $tugas) ?>" method="POST">
+
+        <input type="hidden" name="nama_nilai" value="<?= $nama_nilai ?>">
+        <input type="hidden" name="nim" value="<?= $nim ?>">
+
         <div class="form-group">
           <label for="nilai"><h3>Nilai</h3></label>
-          <input type="text" class="form-control" id="nilai" placeholder="">
+          <input type="text" name="nilai" class="form-control" id="nilai" placeholder="">
         </div>
 
         <div class="form-group">

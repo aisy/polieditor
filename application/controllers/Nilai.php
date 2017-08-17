@@ -39,4 +39,15 @@ class Nilai extends CI_Controller{
     // exit;
   }
 
+  public function insertNilaiUjian($id_tugas){
+
+    $data = array(
+      'nama_nilai'=>$this->input->post('nama_nilai'),
+      'nim'     =>$this->input->post('nim'),
+      'nilai'   =>$this->input->post('nilai')
+    );
+    $insert = $this->Model_nilai->insert($data);
+
+    redirect('tugas/listTugas/' . $id_tugas, 'refresh');
+  }
 }

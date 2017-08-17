@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col-md-8">
         <div class="text-center">
-          <h3>Latihan</h3>
+          <h3><?= $judul ?></h3>
           <hr class="mt-2 mb-2">
           <table class="table">
             <thead class="thead-inverse">
@@ -26,7 +26,7 @@
             <?php $i=1; foreach ($tugas as $key => $value) { ?>
               <tr>
                 <th scope="row"><?= $i ?></th>
-                <td><?= $tugas[$i-1] ?></td>
+                <td><?= str_replace(".html","",$tugas[$i-1]) ?></td>
                 <td>
                   <div class="btn-group btn-group-sm">
                       <a href="<?= site_url('tugas/nilai_tugas/'.$tugas[$i-1].'/'.$id_kelas.'/'.$id_tugas)  ?>" type="button" class="btn btn-pink">Beri Nilai

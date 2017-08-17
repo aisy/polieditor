@@ -62,6 +62,8 @@ class Tugas extends CI_Controller {
     $data['name_file'] = $id;
     $data['kelas'] = $id2;
     $data['tugas'] = $id3;
+    $data['nama_nilai'] = $this->Model_tugas->find($id3)->judul;
+    $data['nim'] = str_replace(".html", "", $id);
 
     $this->load->view('tugas/editor_tugas', $data);
   }
@@ -92,7 +94,7 @@ class Tugas extends CI_Controller {
     $data['tugas'] = json_decode($dir);
     $data['id_kelas'] = $id_kelas;
     $data['id_tugas'] = $id;
-
+    $data['judul'] = $data_tugas->judul;
     // print_r($data['tugas']);
     $this->load->view('tugas/list_tugas', $data);
   }
