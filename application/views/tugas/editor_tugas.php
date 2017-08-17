@@ -6,7 +6,7 @@
 <?php $this->load->view('partials/dsn_navbar_auto') ?>
 <!-- Mhs Navbar Close -->
 
-
+<br><br><br><br>
 
 <div class="learn">
   <div class="row">
@@ -36,6 +36,19 @@
       <div class="result" id="return">
 
       </div>
+      <br><br>
+<!--   form beri nilai   -->
+      <form action="">
+        <div class="form-group">
+          <label for="nilai"><h3>Nilai</h3></label>
+          <input type="text" class="form-control" id="nilai" placeholder="">
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Beri Nilai</button>
+        </div>
+      </form>
+      
     </div>
   </div>
 </div>
