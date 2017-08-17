@@ -3,17 +3,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Nilai extends CI_Controller{
 
+  var $API="";
+
   public function __construct(){
     parent::__construct();
     //Codeigniter : Write Less Do More
     $this->load->model(array('Model_nilai'));
+    $this->API = 'http://localhost/polieditor/';
   }
 
   function index($nim){
-    $dir = "http://localhost/polieditor/folder_tugas/";
-    $files = opendir($dir."TI-4D".'/');
 
-    print_r($files);
+    $dir = $this->curl->simple_get($this->API.'Tugas/dirTugas/TI-4D');
+    $data['tugas'] = json_encode($dir);
 
     // $this->load->view('nilai');
   }

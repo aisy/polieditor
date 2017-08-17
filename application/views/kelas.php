@@ -79,9 +79,12 @@
                                 onclick="window.location='<?= base_url('tugas/delete/' . $row->id_tugas . '/' . $kelas->id_kelas) ?>'">
                                 <i class="fa fa-trash"></i>
                               </button>
-                              <button type="button" class="btn btn-info">
+                              <!-- <button type="button" class="btn btn-info">
                                 <i class="fa fa-list"></i>
-                              </button>
+                              </button> -->
+                              <a href="<?= base_url('tugas/listTugas/'.$row->id_tugas) ?>" class="btn btn-success" >
+                                <i class="fa fa-eye"></i>
+                              </a>
                             </div>
                           </td>
                         </tbody>
@@ -187,6 +190,7 @@
                                 <button type="button" class="btn btn-danger" onclick="window.location='<?= base_url('Soal/hapus_soal/' . $row->id_ujian . "/" . $kelas->id_kelas) ?>'">
                                   <i class="fa fa-trash"></i>
                                 </button>
+
                               </div>
                             </td>
                           </tbody>

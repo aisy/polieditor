@@ -3,11 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Tugas extends CI_Controller {
 
+  var $API="";
+
   public function __construct() {
     parent::__construct();
     //Codeigniter : Write Less Do More
-
+    $this->API = 'http://localhost/polieditor/';
     $this->load->model('Model_tugas');
+    // $this->load->model('Model_ujian');
   }
 
 
@@ -68,6 +71,20 @@ class Tugas extends CI_Controller {
     ->set_output(json_encode($data, JSON_PRETTY_PRINT)) //hasil yang ditampilkan menggunakan json_encode dalam bentuk tampilan cantik
     ->_display();
     exit;
+  }
+
+  public function listTugas($id){
+
+    $data_tugas = $this->Model_tugas->find($id);
+    $id_kelas = $data_tugas->id_kelas;
+
+    // echo $id_kelas;
+
+    $dir = $this->curl->simple_get($this->API.'Tugas/dirTugas/'.$id_kelas."/".$id);
+    $data['tugas'] = json_decode($dir);
+
+    print_r($data['tugas']);
+    $this->load->view('tugas/list_tugas', $data);
   }
 
   public function getLatihan($id){
