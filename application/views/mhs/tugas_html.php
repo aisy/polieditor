@@ -31,7 +31,7 @@
                 <td><?= $value['waktu_mulai']." - ".$value['waktu_selesai'] ?></td>
                 <td>
                   <div class="btn-group btn-group-sm">
-                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal<?= $value['id_tugas'] ?>">
                       Upload
                     </button>
                   </div>
@@ -48,7 +48,8 @@
   </main>
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <?php $i=1; foreach ($tugas as $key => $value) { ?>
+  <div class="modal fade" id="myModal<?= $value['id_tugas'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <!--Content-->
       <div class="modal-content">
@@ -62,6 +63,8 @@
         <!--Body-->
         <div class="modal-body">
           <form class="" action="<?= base_url('Tugas/insert') ?>" method="post" enctype="multipart/form-data">
+
+            <input type="hidden" name="id_tugas" value="<?= $value['id_tugas'] ?>">
 
             <div class="form-group">
 
@@ -93,6 +96,8 @@
       <!--/.Content-->
     </div>
   </div>
-  <!-- /.Live preview-->
+  <?php } ?>
+
+<!-- /.Live preview-->
 
   <?php $this->load->view('partials/mdb-footer') ?>

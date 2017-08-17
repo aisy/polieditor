@@ -15,7 +15,8 @@ class Tugas extends CI_Controller{
   }
 
   public function insert(){
-    $name_folder = $this->session->userdata('kelas');
+    $id_tugas = $this->input->post('id_tugas');
+    $name_folder = $this->session->userdata('kelas') . '/' . $id_tugas;
     $upload_dir = 'folder_tugas/'.$name_folder.'/';
 
     if(!is_dir($upload_dir)) {
@@ -26,7 +27,7 @@ class Tugas extends CI_Controller{
     $config['upload_path'] = $upload_dir;
     $config['allowed_types'] = 'ppt|pdf|docx|html';
     // $config['encrypt_name'] = true;
-    $config['file_name'] = $this->session->userdata('nim');;
+    $config['file_name'] = $this->session->userdata('nim');
 
     $this->load->library('upload', $config);
 
@@ -36,7 +37,7 @@ class Tugas extends CI_Controller{
     } else {
       echo $this->upload->display_errors();
     }
-    redirect(base_url('mahasiswa/tugas/' . $this->session->userdata('kelas')));
+    redirect(base_url('mahasiswa/submitHtml/' . $this->session->userdata('kelas')));
   }
 
 }
