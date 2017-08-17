@@ -92,6 +92,7 @@ class Mahasiswa extends CI_Controller{
   public function list_soal($id){
     $data_ujian    = $this->curl->simple_get($this->API.'/Ujian/listUjian/'.$id);
     $data['soal'] = json_decode($data_ujian, TRUE);
+
     $data['nama_soal'] = $data['soal'][0]['nama_ujian'];
 
     $this->load->view('mhs/tugas_soal', $data);
@@ -99,15 +100,21 @@ class Mahasiswa extends CI_Controller{
 
   public function pilgan($id){
     $data_tugas    = $this->curl->simple_get($this->API.'Soal/list_pilgan/'.$id);
+    $data_ujian    = $this->curl->simple_get($this->API.'Ujian/findUjian/'.$id);
+
     $data['tugas'] = json_decode($data_tugas, TRUE);
+    $data['ujian'] = json_decode($data_ujian, TRUE);
     $data['id_ujian'] = $id;
 
     $this->load->view('mhs/soal_pilgan', $data);
   }
 
   public function essay($id){
-    $data_tugas    = $this->curl->simple_get($this->API.'Soal/list_pilgan/'.$id);
+    $data_tugas    = $this->curl->simple_get($this->API.'Soal/list_essay/'.$id);
+    $data_ujian    = $this->curl->simple_get($this->API.'Ujian/findUjian/'.$id);
+
     $data['tugas'] = json_decode($data_tugas, TRUE);
+    $data['ujian'] = json_decode($data_ujian, TRUE);
     $data['id_ujian'] = $id;
 
     $this->load->view('mhs/soal_essay', $data);

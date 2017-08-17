@@ -60,20 +60,20 @@ class Penilaian extends CI_Controller{
     $nilai = (array_sum($benar)*100)/count($data_real);
 
     $data = array(
-        'id_ujian'=>$data_real[0]['nama_ujian'],
-        'nim'     =>$this->session->userdata('nim'),
-        'nilai'   =>$nilai
+        'nama_ujian' => $this->input->post('nama_ujian'),
+        'nim'        => $this->session->userdata('nim'),
+        'nilai'      => $nilai
       );
 
+      print_r($data);
+
       // send POST to service
-      $insert = $this->curl->simple_post($this->API.'/Nilai/insert', $data, array(CURLOPT_BUFFERSIZE => 10));
-      // $convert = json_decode($insert);
+      $insert = $this->curl->simple_post($this->API.'Nilai/insert', $data, array(CURLOPT_BUFFERSIZE => 10));
+      $convert = json_decode($insert);
 
-      // if (!$convert) {
-      //   redirect(base_url(),'refresh');
-      // }
+      print_r($convert);
 
-      // redirect(base_url('Mahasiswa/index/'.$this->session->userdata('kelas')),'refresh');
+      redirect(base_url('Mahasiswa/index/'.$this->session->userdata('kelas')),'refresh');
   }
 
 }
