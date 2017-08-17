@@ -9,8 +9,7 @@ class Tugas extends CI_Controller{
     //Codeigniter : Write Less Do More
   }
 
-  function index()
-  {
+  function index(){
 
   }
 
@@ -38,6 +37,21 @@ class Tugas extends CI_Controller{
       echo $this->upload->display_errors();
     }
     redirect(base_url('mahasiswa/submitHtml/' . $this->session->userdata('kelas')));
+  }
+
+  public function dirTugas($id, $id2){
+
+    $this->load->helper(array('directory'));
+
+    $dir = directory_map('./folder_tugas/'.$id.'/'.$id2, 1);
+
+    $this->output
+     ->set_status_header(200)
+     ->set_content_type('application/json', 'utf-8')
+     ->set_output(json_encode($dir, JSON_PRETTY_PRINT))
+     ->_display();
+     exit;
+
   }
 
 }

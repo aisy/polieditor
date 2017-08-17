@@ -1,0 +1,32 @@
+<!--References-->
+<script src="assets/js/jquery-3.1.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+<!--Code-->
+<div class="slide" id="slideshow">
+    <ol class="carousel-indicators">
+        <li data-slide-to="0" data-target="#slideshow" class="active" > </li>
+        <li data-slide-to="1" data-target="#slideshow"> </li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="active item"><div id="video1"></div></div>
+        <div class="item">empty slide (for example)</div>
+    </div>
+</div>
+
+    
+<script type="text/javascript" src="http://www.youtube.com/iframe_api"></script>
+<script type="text/javascript">
+ var player;
+ function onYouTubeIframeAPIReady() {
+     player = new YT.Player('video1', { videoId: 'lgeC4KT-7NE' });
+ }
+
+ $(function () {
+     $('#slideshow').carousel({
+         interval: 5000
+     }).bind('slide', function () {
+         player.stopVideo();
+     });
+ });
+</script>
