@@ -92,6 +92,7 @@ class Mahasiswa extends CI_Controller{
   public function list_soal($id){
     $data_ujian    = $this->curl->simple_get($this->API.'/Ujian/listUjian/'.$id);
     $data['soal'] = json_decode($data_ujian, TRUE);
+    $data['nama_soal'] = $data['soal'][0]['nama_ujian'];
 
     $this->load->view('mhs/tugas_soal', $data);
   }

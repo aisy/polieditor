@@ -50,7 +50,7 @@
         <!--Card content-->
         <div class="card-block">
           <!--Title-->
-          <h4 class="card-title">Soal Essay/Pilihan Ganda</h4>
+          <h4 class="card-title">Soal</h4>
           <hr>
           <!--Button-->
           <a href="<?= site_url('mahasiswa/list_soal/'.$this->session->userdata('kelas') ) ?>" type="button" class="btn btn-lg btn-block btn-pink" name="button">Pilih</a>
