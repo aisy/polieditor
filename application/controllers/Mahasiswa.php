@@ -84,8 +84,19 @@ class Mahasiswa extends CI_Controller{
   }
 
   public function submitHtml($id){
+    $nim = $this->session->userdata('nim');
     $data_tugas    = $this->curl->simple_get($this->API.'Tugas/getTugasKelas/'.$id);
     $data['tugas'] = json_decode($data_tugas, TRUE);
+
+    $i = 0;
+    foreach ($data['tugas'] as $row) {
+      $file = './folder_tugas/' . $id . '/' . $row['id_tugas'] . '/' . $nim . '.html';
+      if (file_exists($file)) {
+        unset($data['tugas'][$i]);
+      }
+    $i++;
+    }
+
     $this->load->view('mhs/tugas_html', $data);
   }
 
