@@ -208,6 +208,14 @@
 
               <div class="container">
                 <div class="row">
+
+                  <div class="center text-xs-center">
+                    <a href="<?= base_url('nilai/mhsNilai/'.$kelas->nama_kelas) ?>" class="btn btn-primary">
+                      <i class="fa fa-eye"></i> Lihat Materi
+                    </a>
+                  </div>
+                  <hr>
+
                   <table class="table table-bordered table-striped">
                     <tr>
                       <thead>

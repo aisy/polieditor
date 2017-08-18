@@ -39,6 +39,12 @@ class Model_nilai extends CI_Model{
       $this->db->where($this->primaryKey, $id);
       $this->db->delete($this->table);
   }
+
+  public function where1($field, $value) {
+      $this->db->where($field, $value);
+      $this->db->order_by('nama_nilai', 'asc');
+      return $this->db->get($this->table)->result();
+  }
 }
 
 ?>

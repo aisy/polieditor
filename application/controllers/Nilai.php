@@ -10,6 +10,7 @@ class Nilai extends CI_Controller{
     //Codeigniter : Write Less Do More
     $this->load->model(array('Model_nilai'));
     $this->API = 'http://localhost/polieditor/';
+    $this->API2 = 'http://localhost/skripsiku-kemahasiswaan/';
   }
 
   function index($nim){
@@ -17,7 +18,24 @@ class Nilai extends CI_Controller{
     $dir = $this->curl->simple_get($this->API.'Tugas/dirTugas/TI-4D');
     $data['tugas'] = json_encode($dir);
 
-    // $this->load->view('nilai');
+    $this->load->view('nilai');
+  }
+
+  public function mhsNilai($kelas){
+    $mhs               = $this->curl->simple_get($this->API2.'Service/getKelas/'.$kelas);
+    // $data['mhs']       = json_decode($mhs, TRUE);
+
+    $data_mhs   = json_decode($mhs, TRUE);
+
+    foreach ($data_mhs as $key => $value) {
+      $data_nilai[] = $this->Model_nilai->where1('nim',$value['nim']);
+      // array_push($value, $value['nama_mahasiswa']);
+    }
+
+    print_r($data_nilai);
+    $data['nilai'] = $data_nilai;
+
+    $this->load->view('nilai/nilai_mahasiswa', $data);
   }
 
   public function insert(){
