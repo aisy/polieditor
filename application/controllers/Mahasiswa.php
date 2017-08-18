@@ -90,10 +90,19 @@ class Mahasiswa extends CI_Controller{
   }
 
   public function list_soal($id){
+    $nim = $this->session->userdata('nim');
     $data_ujian    = $this->curl->simple_get($this->API.'/Ujian/listUjian/'.$id);
     $data['soal'] = json_decode($data_ujian, TRUE);
 
-    $data['nama_soal'] = $data['soal'][0]['nama_ujian'];
+    $i = 0;
+    foreach ($data['soal'] as $row) {
+
+      $response = $this->curl->simple_get($this->API . '/Nilai/cek_nilai/' . $nim . '/' . $row['nama_ujian']);
+      if (json_decode($response)) {
+        unset($data['soal'][$i]);
+      }
+      $i++;
+    }
 
     $this->load->view('mhs/tugas_soal', $data);
   }
