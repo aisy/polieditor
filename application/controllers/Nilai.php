@@ -32,7 +32,17 @@ class Nilai extends CI_Controller{
       // array_push($value, $value['nama_mahasiswa']);
     }
 
-    print_r($data_nilai);
+    // ambil nama mahasiswa
+    foreach ($data_nilai as $row) {
+      foreach ($row as $row2) {
+        $nim = $row2->nim;
+        $data_mahasiswa = $this->curl->simple_get($this->API2.'Service/getNim/' . $nim);
+        $nama_mahasiswa = json_decode($data_mahasiswa)->nama_mahasiswa;
+        $row2->nama_mahasiswa = $nama_mahasiswa;
+      }
+    }
+
+//    print_r($data_nilai);
     $data['nilai'] = $data_nilai;
 
     $this->load->view('nilai/nilai_mahasiswa', $data);
