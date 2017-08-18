@@ -211,7 +211,7 @@
 
                   <div class="center text-xs-center">
                     <a href="<?= base_url('nilai/mhsNilai/'.$kelas->nama_kelas) ?>" class="btn btn-primary">
-                      <i class="fa fa-eye"></i> Lihat Materi
+                      <i class="fa fa-eye"></i> Lihat Nilai satu kelas
                     </a>
                   </div>
                   <hr>
@@ -222,7 +222,7 @@
                         <th>#</th>
                         <th>NIM</th>
                         <th>Nama</th>
-                        <th>Pilihan</th>
+                        <!-- <th>Pilihan</th> -->
                       </thead>
                     </tr>
 
@@ -232,13 +232,13 @@
                           <td><?= $i ?></td>
                           <td><?= $value['nim'] ?></td>
                           <td><?= $value['nama_mahasiswa'] ?></td>
-                          <td>
+                          <!-- <td>
                             <div class="btn-group btn-group-sm">
                               <button type="button" class="btn btn-info" onclick="window.location='<?= base_url('nilai/index/' . $value['nim']) ?>'">
                                 <i class="fa fa-edit"></i>
                               </button>
                             </div>
-                          </td>
+                          </td> -->
                         </tbody>
                         <?php $i++; } ?>
                       </tr>

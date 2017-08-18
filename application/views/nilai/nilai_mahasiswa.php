@@ -27,12 +27,12 @@
                   <th>Nama</th>
                   <th>Nilai 1</th>
                   <th>Nilai 2</th>
-                  <th>NR1</th>
                   <th>UTS</th>
+                  <th>NR1</th>
                   <th>Nilai 3</th>
                   <th>Nilai 4</th>
-                  <th>NR2</th>
                   <th>UAS</th>
+                  <th>NR2</th>
                 </thead>
               </tr>
 
@@ -45,7 +45,7 @@
                     <td><?= $value[0]->nilai ?></td>
                     <td><?= $value[1]->nilai ?></td>
                     <td><?= $value[5]->nilai ?></td>
-                    <td><?= ($value[0]->nilai+$value[1]->nilai+)/2 ?></td>
+                    <td><?= ($value[0]->nilai+$value[1]->nilai+$value[5]->nilai)/3 ?></td>
                     <td><?= $value[2]->nilai ?></td>
                     <td><?= $value[3]->nilai ?></td>
                     <td><?= $value[4]->nilai ?></td>
