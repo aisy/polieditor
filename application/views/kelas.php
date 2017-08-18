@@ -9,7 +9,7 @@
 <main id="content">
   <div class="container-fluid">
     <div class="row">
-
+      <div class="col-md-12">
       <center>
         <h1><?= $kelas->nama_kelas ?></h1>
       </center>
@@ -248,6 +248,7 @@
               </div>
 
             </div>
+      </div>
           </div>
         </div>
       </main>
