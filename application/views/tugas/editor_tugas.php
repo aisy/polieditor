@@ -50,6 +50,7 @@
 
         <div class="form-group">
           <button type="submit" class="btn btn-primary">Beri Nilai</button>
+          <button type="button" onclick="window.location='<?= base_url('tugas/listTugas/' . $tugas ) ?>'" class="btn btn-danger">Batal</button>
         </div>
       </form>
       
