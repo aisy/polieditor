@@ -39,6 +39,14 @@ header{
     }
 }
 
+@media (min-width:768px) {
+
+  .col-md-8 {
+    float: right;
+    margin-right: 100px;
+  }
+}
+
 .description {
     padding-top: 25%;
     padding-bottom: 3rem;
