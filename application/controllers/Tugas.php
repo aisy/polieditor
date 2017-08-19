@@ -45,6 +45,10 @@ class Tugas extends CI_Controller{
 
     $dir = directory_map('./folder_tugas/'.$id.'/'.$id2, 1);
 
+    if (!$dir) {
+      $dir = array();
+    }
+
     $this->output
      ->set_status_header(200)
      ->set_content_type('application/json', 'utf-8')
