@@ -10,6 +10,7 @@ class Tugas extends CI_Controller {
     //Codeigniter : Write Less Do More
     $this->API = 'http://localhost/polieditor/';
     $this->load->model('Model_tugas');
+    $this->load->model('Model_nilai');
     // $this->load->model('Model_ujian');
   }
 
@@ -92,6 +93,21 @@ class Tugas extends CI_Controller {
 
     $dir = $this->curl->simple_get($this->API.'Tugas/dirTugas/'.$id_kelas."/".$id);
     $data['tugas'] = json_decode($dir);
+
+    $i = 0;
+    foreach ($data['tugas'] as $row) {
+      $nim = str_replace('.html', '', $row);
+      $filter = array(
+        'nim' => $nim,
+        'nama_nilai' => $data_tugas->judul
+      );
+
+      if($this->Model_nilai->where3($filter)) {
+        unset($data['tugas'][$i]);
+      }
+      $i++;
+    }
+
     $data['id_kelas'] = $id_kelas;
     $data['id_tugas'] = $id;
     $data['judul'] = $data_tugas->judul;

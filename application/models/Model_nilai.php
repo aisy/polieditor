@@ -26,6 +26,15 @@ class Model_nilai extends CI_Model{
       return $this->db->get($this->table)->result();
   }
 
+  public function where3($filter) {
+
+    foreach ($filter as $key => $value) {
+      $this->db->where($key, $value);
+    }
+
+    return $this->db->get($this->table)->result();
+  }
+
   public function insert($data) {
       $this->db->insert($this->table, $data);
   }

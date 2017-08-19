@@ -82,9 +82,12 @@
                               <!-- <button type="button" class="btn btn-info">
                                 <i class="fa fa-list"></i>
                               </button> -->
-                              <a href="<?= base_url('tugas/listTugas/'.$row->id_tugas) ?>" class="btn btn-success" >
+                              <?php if($row->jenis_tugas == 'Tugas harian') { ?>
+                               <a href="<?= base_url('tugas/listTugas/'.$row->id_tugas) ?>" class="btn btn-success" >
                                 <i class="fa fa-eye"></i>
                               </a>
+                              <?php } ?>
+
                             </div>
                           </td>
                         </tbody>
