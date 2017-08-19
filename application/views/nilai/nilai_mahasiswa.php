@@ -42,14 +42,14 @@
                     <td><?= $i ?></td>
                     <td><?= $value[0]->nim ?></td>
                     <td><?= $value[0]->nama_mahasiswa ?></td>
-                    <td><?= $value[0]->nilai ?></td>
-                    <td><?= $value[1]->nilai ?></td>
-                    <td><?= $value[5]->nilai ?></td>
-                    <td><?= ($value[0]->nilai+$value[1]->nilai)/2 ?></td>
-                    <td><?= $value[2]->nilai ?></td>
-                    <td><?= $value[3]->nilai ?></td>
-                    <td><?= $value[4]->nilai ?></td>
-                    <td><?= ($value[0]->nilai+$value[1]->nilai)/2 ?></td>
+                    <td><?= @$value[0]->nilai ?></td>
+                    <td><?= @$value[1]->nilai ?></td>
+                    <td><?= @$value[5]->nilai ?></td>
+                    <td><?= @($value[0]->nilai+$value[1]->nilai)/2 ?></td>
+                    <td><?= @$value[2]->nilai ?></td>
+                    <td><?= @$value[3]->nilai ?></td>
+                    <td><?= @$value[4]->nilai ?></td>
+                    <td><?= @($value[0]->nilai+$value[1]->nilai)/2 ?></td>
                   </tbody>
                   <?php $i++; } ?>
                 </tr>
