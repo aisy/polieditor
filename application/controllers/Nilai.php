@@ -78,4 +78,26 @@ class Nilai extends CI_Controller{
 
     redirect('tugas/listTugas/' . $id_tugas, 'refresh');
   }
+
+  public function cek_nilai($nim, $nama_nilai) {
+
+    $filter = array(
+      'nim' => $nim,
+      'nama_nilai' => urldecode($nama_nilai)
+    );
+
+    $data = $this->Model_nilai->where3($filter);
+    $output = false;
+
+    if (count($data)) {
+      $output = true;
+    }
+
+     $this->output
+     ->set_status_header(200) //header untuk service
+     ->set_content_type('application/json', 'utf-8') //tipe dari data=>pake JSON
+     ->set_output(json_encode($output, JSON_PRETTY_PRINT)) //hasil yang ditampilkan menggunakan json_encode dalam bentuk tampilan cantik
+     ->_display();
+     exit;
+  }
 }
